@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled,{css} from "styled-components";
 
 export const ButtonAreaStyled = styled.div`
 width: 100%;
@@ -8,12 +8,22 @@ height: auto;
 display: grid;
 grid-template-columns: 1fr 1fr;
 grid-gap: 20px;
-padding: 5vw;
+padding-left: 4vw;
+padding-right: 4vw;
 label{
    display: flex;
    justify-content: center;
    align-items: center;
    flex-direction: column;
+   
 }
-
+${props =>
+    props.small &&
+    css`
+    height: 20vw;
+    margin:0px;
+    
+    
+   
+    `};
 `

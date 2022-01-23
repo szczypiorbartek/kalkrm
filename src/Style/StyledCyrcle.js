@@ -17,8 +17,8 @@ ${props =>
     props.timeCircleFirst &&
     css`
     margin-top: 5vh;
-    width: 250px;
-    height: 250px;
+    width: 230px;
+    height: 230px;
     background:#D8D8D8;
      border:solid 20px #E51C1C;
       color: #3E3E3E;
@@ -27,8 +27,8 @@ ${props =>
     props.timeCircleSec &&
     css`
     margin-top: 5vh;
-    width: 250px;
-    height: 250px;
+    width: 230px;
+    height: 230px;
     background:#D8D8D8;
      border:solid 20px #E1E51C;
       color: #3E3E3E;
@@ -37,8 +37,8 @@ ${props =>
     props.timeCircleLast &&
     css`
     margin-top: 5vh;
-    width: 270px;
-    height: 270px;
+    width: 230px;
+    height: 230px;
     background:#D8D8D8;
      border:solid 20px #20E51C;
       color: #3E3E3E;

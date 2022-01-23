@@ -30,7 +30,7 @@ export default function Wrapper(props) {
   };
   const OxygenOpen = () => {
     setVisibleOxygen(!visibleOxygen);
-    setTitle("Tlen");
+    setTitle("Ilość tlenu");
     setVisiblePanel(!visiblePanel);
   };
 
