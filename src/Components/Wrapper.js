@@ -47,7 +47,9 @@ export default function Wrapper(props) {
          {visibleAdrenalina ?
           <Adrenalina content={contentVisble} /> :''}
 
-         
+        <Header back={Home} 
+         visibleCont={chageVisible} />
+        
        </StyledWrapper>
     )
 }
