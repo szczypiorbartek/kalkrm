@@ -5,7 +5,7 @@ import { StyledPanelItem } from '../Style/StyledPanelItem'
 
 export default function PanelItem(props) {
     return (
-       <StyledPanelItem onClick={props.Open}>
+       <StyledPanelItem onClick={props.open}>
            <img src={props.icon}></img>
            <p>Adrenalina w pomie</p>
        </StyledPanelItem>

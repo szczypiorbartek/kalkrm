@@ -15,6 +15,7 @@ box-shadow: rgba(0, 0, 0, 0.20) 0px 5px 15px;
 text-align: center;
 padding: 5%;
 
+
 h1{
     font-size: 25px;
     line-height: 35px;

@@ -1,65 +1,57 @@
-import React,{useState} from 'react'
+import React, { useState } from "react";
 import { StyledWrapper } from "../Style/StyleWrapper";
-import Header from './Header';
-import Panel from './Panel';
-import Adrenalina from './Adrenalina';
-import { useEffect } from 'react/cjs/react.development';
-
-
-
+import Header from "./Header";
+import Panel from "./Panel";
+import Adrenalina from "./Adrenalina";
+import { useEffect } from "react/cjs/react.development";
+import Modal from "./Modal";
 
 export default function Wrapper(props) {
-    const [visiblePanel, setVisiblePanel] = useState(true)
-    const [visibleAdrenalina, setVisibleAdrenalina] = useState(false)
-    const [title, setTitle] = useState("Co liczymy ?")
-    const [contentVisble, setContentVisible] = useState(false)
-    
-  
+  const [visiblePanel, setVisiblePanel] = useState(true);
 
+  const [title, setTitle] = useState("Co liczymy ?");
+  const [contentVisble, setContentVisible] = useState(false);
+  const [modalVisible, setMoalVisible] = useState(false);
 
+  const [visibleAdrenalina, setVisibleAdrenalina] = useState(false);
+  const [visibleOxygen, setVisibleOxygen] = useState(false);
 
-    const Home= () => {
-        setVisiblePanel(true)
-        setVisibleAdrenalina(false)
-        setTitle("Co Liczymy ?")
-    }
-    const VisibleB= () => {
-        setVisibleAdrenalina(!visibleAdrenalina)
-        setTitle("Adrenalina w pompie")
-        setVisiblePanel(!visiblePanel)
-    }
-    const chageVisible = () =>{
-        setContentVisible(true)
-    }
+  const Home = () => {
+    setVisiblePanel(true);
+    setVisibleAdrenalina(false);
+    setVisibleOxygen(false);
+    setContentVisible(false)
+    setTitle("Co Liczymy ?");
+  };
+  const AdrenalinaOpen = () => {
+    setVisibleAdrenalina(!visibleAdrenalina);
+    setTitle("Adrenalina w pompie");
+    setVisiblePanel(!visiblePanel);
+  };
+  const OxygenOpen = () => {
+    setVisibleOxygen(!visibleOxygen);
+    setTitle("Tlen");
+    setVisiblePanel(!visiblePanel);
+  };
 
+  const chageVisible = () => {
+    setContentVisible(true);
+  };
 
+  return (
+    <StyledWrapper>
+      <h1>{title}</h1>
+      {visiblePanel ? (
+        <Panel openAdrenalina={AdrenalinaOpen} openOxygen={OxygenOpen} />
+      ) : (
+        <Modal
+          visibleAdrenalina={visibleAdrenalina}
+          visibleOxygen={visibleOxygen}
+          contentVisible={contentVisble}
+        />
+      )}
 
-
-
- 
-    return (
-
-       <StyledWrapper>
-          <h1>{title}</h1> 
-         {visiblePanel ? 
-         <Panel visible={VisibleB} />:''}
-
-         {visibleAdrenalina ?
-          <Adrenalina content={contentVisble} /> :''}
-          
-          <Header 
-          back={Home} 
-         visibleCont={chageVisible} />
-
-       </StyledWrapper>
-
-            
-        
-        
-       
-    )
+      <Header back={Home} visibleCont={chageVisible} />
+    </StyledWrapper>
+  );
 }
-
-
-
-

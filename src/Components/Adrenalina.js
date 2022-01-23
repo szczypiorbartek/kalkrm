@@ -64,14 +64,14 @@ export default function Adrenalina(props) {
                 </label>
             </ButtonAreaStyled>
            
-           { props.content ?<div>
+           {doseValue>0 & props.content & (checkB || checkA) ? <div>
             {bradyActive ? <StyledContent>
                  <h1>1 amp adrenaliny rozcieńczyć w {squirrel.a} ml 0.9% NaCl. Ustawić na pompie infuzyjnej przepływ na {(doseValue*60)/squirrel.b} ml/h</h1> 
             </StyledContent> : 
              <StyledContent>
              <h1>1 amp adrenaliny rozcieńczyć w {squirrel.a} ml 0.9% NaCl. Ustawić na pompie przepływ na {((doseValue*weightValue*60)/(squirrel.b)).toFixed(0)} ml/h</h1> 
         </StyledContent>}
-            </div> :''}
+            </div> :'Uzupełnij pole'}
         
           
           

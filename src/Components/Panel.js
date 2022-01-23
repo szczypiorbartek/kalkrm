@@ -12,10 +12,11 @@ export default function Panel(props) {
         
           <StyledPanel>
               
-             <PanelItem Open={props.visible} icon={adrenalina}/>
-             <PanelItem icon={oxy}/>
+             <PanelItem open={props.openAdrenalina} icon={adrenalina}/>
+             <PanelItem open={props.openOxygen} icon={oxy}/>
              <PanelItem icon={child}/>
              <PanelItem icon={fire}/>
+
           </StyledPanel>
           
               
