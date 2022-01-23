@@ -7,7 +7,7 @@ height: 100px;
 background-color: #FF3C21;
 border-radius: 50%;
 border: solid 8px #D8D8D8;
-margin-bottom: 80px;
+margin-bottom: 8vh;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -16,9 +16,10 @@ font-size: 60px;
 ${props =>
     props.timeCircleFirst &&
     css`
-    margin-top: 5vh;
-    width: 225px;
-    height: 225px;
+    
+    margin-top: 3vh;
+    width: 250px;
+    height: 250px;
     background:#D8D8D8;
      border:solid 20px #E51C1C;
       color: #3E3E3E;
@@ -27,9 +28,9 @@ ${props =>
     ${props =>
     props.timeCircleSec &&
     css`
-    margin-top: 5vh;
-    width: 225px;
-    height: 225px;
+    margin-top: 3vh;
+    width: 250px;
+    height: 250px;
     background:#D8D8D8;
      border:solid 20px #E1E51C;
       color: #3E3E3E;
@@ -38,9 +39,9 @@ ${props =>
     ${props =>
     props.timeCircleLast &&
     css`
-    margin-top: 5vh;
-    width: 225x;
-    height: 225px;
+    margin-top: 3vh;
+    width: 250px;
+    height: 250px;
     background:#D8D8D8;
      border:solid 20px #20E51C;
       color: #3E3E3E;
