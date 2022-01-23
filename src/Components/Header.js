@@ -2,7 +2,7 @@ import React from 'react'
 import { StyledHeader } from '../Style/StyleHeader'
 import {ReactComponent as Home} from '../Assets/Home.svg'
 import { StyledCyrcle } from '../Style/StyledCyrcle'
-import {ReactComponent as Zero} from '../Assets/zero.svg'
+import {ReactComponent as Menu} from '../Assets/menu.svg'
 export default function Header(props) {
     return (
        <StyledHeader>
@@ -12,7 +12,7 @@ export default function Header(props) {
                    =
                </p>
            </StyledCyrcle>
-        <Zero onClick={props.clearContent}/>
+        <Menu onClick={props.clearContent}/>
        </StyledHeader>
     )
 }

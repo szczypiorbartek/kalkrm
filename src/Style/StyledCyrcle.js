@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled,{css}from "styled-components";
 
 export const StyledCyrcle = styled.div`
 width: 100px;
@@ -12,4 +12,36 @@ display: flex;
 justify-content: center;
 align-items: center;
 font-size: 60px;
+
+${props =>
+    props.timeCircleFirst &&
+    css`
+    margin-top: 5vh;
+    width: 250px;
+    height: 250px;
+    background:#D8D8D8;
+     border:solid 20px #E51C1C;
+      color: #3E3E3E;
+    `};
+    ${props =>
+    props.timeCircleSec &&
+    css`
+    margin-top: 5vh;
+    width: 250px;
+    height: 250px;
+    background:#D8D8D8;
+     border:solid 20px #E1E51C;
+      color: #3E3E3E;
+    `};
+    ${props =>
+    props.timeCircleLast &&
+    css`
+    margin-top: 5vh;
+    width: 270px;
+    height: 270px;
+    background:#D8D8D8;
+     border:solid 20px #20E51C;
+      color: #3E3E3E;
+      font-size: 45px;
+    `};
 `

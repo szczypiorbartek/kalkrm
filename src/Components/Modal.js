@@ -13,7 +13,7 @@ const visibleAdrenalina = useState(props.visibleAdrenalina)
            props.visibleAdrenalina ? <Adrenalina content={props.contentVisible}/> : ''
        }
          {
-           props.visibleOxygen ? <Oxygen/> : ''
+           props.visibleOxygen ? <Oxygen content={props.contentVisible}/> : ''
        }
        
    </StyledModal>

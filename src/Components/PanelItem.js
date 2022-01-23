@@ -7,7 +7,7 @@ export default function PanelItem(props) {
     return (
        <StyledPanelItem onClick={props.open}>
            <img src={props.icon}></img>
-           <p>Adrenalina w pomie</p>
+           <p>{props.name}</p>
        </StyledPanelItem>
     )
 }

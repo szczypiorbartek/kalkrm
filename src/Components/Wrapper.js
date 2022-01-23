@@ -9,7 +9,7 @@ import Modal from "./Modal";
 export default function Wrapper(props) {
   const [visiblePanel, setVisiblePanel] = useState(true);
 
-  const [title, setTitle] = useState("Co liczymy ?");
+  const [title, setTitle] = useState("CO LICZYMY ?");
   const [contentVisble, setContentVisible] = useState(false);
   const [modalVisible, setMoalVisible] = useState(false);
 
