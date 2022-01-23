@@ -39,18 +39,24 @@ export default function Wrapper(props) {
  
     return (
 
-       <StyledWrapper >
+       <StyledWrapper>
           <h1>{title}</h1> 
          {visiblePanel ? 
          <Panel visible={VisibleB} />:''}
 
          {visibleAdrenalina ?
           <Adrenalina content={contentVisble} /> :''}
+          
+          <Header 
+          back={Home} 
+         visibleCont={chageVisible} />
 
-
-        
-        
        </StyledWrapper>
+
+            
+        
+        
+       
     )
 }
 
