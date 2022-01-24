@@ -18,6 +18,10 @@ export default function Oxygen(props) {
   const [activeButtonA, setActiveButtonA] = useState(true)
   const [activeButtonB, setActiveButtonB] = useState(false)
 
+  const [finishValue, setFinishValue] =useState()
+
+
+
   return (
     <StyledItemWrapper>
       <ButtonAreaStyled>
@@ -70,14 +74,14 @@ export default function Oxygen(props) {
 
       {(valueA > 0) &(valueC > 0) & props.content ? (
         <>
-          {(valueA * valueC) / valueB >= 60 ? (
+          {activeButtonA ? (valueA * valueC) / valueB  >= 90: (valueA * valueC) /((valueD/1000)*valueE) >= 90 ? (
             <StyledCyrcle timeCircleLast>
              {activeButtonA ? ((valueA * valueC) / valueB).toFixed(0): ((valueA * valueC) /((valueD/1000)*valueE)).toFixed(0)} min
             </StyledCyrcle>
-          ) : (valueA * valueC) / valueB <= 60 &&
-            (valueA * valueC) / valueB >= 30 ? (
+          ) : activeButtonA ? (valueA * valueC) / valueB  <= 90 &&
+            (valueA * valueC) / valueB  >= 30 : (valueA * valueC) /((valueD/1000)*valueE)<= 90 && (valueA * valueC) /((valueD/1000)*valueE) >=30 ? (
             <StyledCyrcle timeCircleSec>
-              {activeButtonA ? ((valueA * valueC) / valueB).toFixed(0): "Respi"} min
+              {activeButtonA ? ((valueA * valueC) / valueB).toFixed(0): ((valueA * valueC) /((valueD/1000)*valueE)).toFixed(0)} min
             </StyledCyrcle>
           ) : (
             <StyledCyrcle timeCircleFirst>
