@@ -18,33 +18,33 @@ ${props =>
     css`
     
     margin-top: 3vh;
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     background:#D8D8D8;
      border:solid 20px #E51C1C;
       color: #3E3E3E;
-      font-size: 40px;
+      font-size: 35px;
     `};
     ${props =>
     props.timeCircleSec &&
     css`
     margin-top: 3vh;
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     background:#D8D8D8;
      border:solid 20px #E1E51C;
       color: #3E3E3E;
-      font-size: 40px;
+      font-size: 35px;
     `};
     ${props =>
     props.timeCircleLast &&
     css`
     margin-top: 3vh;
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     background:#D8D8D8;
      border:solid 20px #20E51C;
       color: #3E3E3E;
-      font-size: 40px;
+      font-size: 35px;
     `};
 `
