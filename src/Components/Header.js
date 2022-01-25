@@ -7,11 +7,7 @@ export default function Header(props) {
     return (
        <StyledHeader>
            <Home  onClick={props.back}/>
-           <StyledCyrcle onClick={props.visibleCont}>
-               <p>
-                   =
-               </p>
-           </StyledCyrcle>
+           
         <Menu onClick={props.clearContent}/>
        </StyledHeader>
     )

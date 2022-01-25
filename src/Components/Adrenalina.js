@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ButtonAreaStyled } from "../Style/ButtonAreaStyled";
-import {StyledItemWrapper } from "../Style/StyledItemWrapper";
+import { StyledItemWrapper } from "../Style/StyledItemWrapper";
 import { StyledButton } from "../Style/StyledButton";
 import { StyledContent } from "../Style/StyledContent";
 import { StyledInput } from "../Style/StyledInput";
 import { StyledSelect } from "../Style/StyledSelect";
+import { StyledCyrcle } from "../Style/StyledCyrcle";
 
 export default function Adrenalina(props) {
   const [bradyActive, setBradyActive] = useState(true);
@@ -13,10 +14,30 @@ export default function Adrenalina(props) {
   const [checkB, setCheckB] = useState(false);
   const [squirrel, setSquirrel] = useState({ a: "", b: "" });
   const [contentVisble, setContentVisible] = useState(false);
+
   const [brady, setBardy] = useState();
+  const [shock, setShock] = useState();
 
   const [weightValue, setWeightValue] = useState();
   const [doseValue, setDoseValue] = useState();
+
+  const getValue = () => {
+    setContentVisible(false);
+    setDoseValue("");
+    setWeightValue("");
+  };
+  useEffect(() => {
+    setBardy((doseValue * 60) / squirrel.b);
+  });
+  useEffect(() => {
+    setShock(((doseValue * weightValue * 60) / squirrel.b).toFixed(0));
+  });
+  useEffect(() => {
+    setContentVisible(false);
+  }, [doseValue]);
+  useEffect(() => {
+    setContentVisible(false);
+  }, [squirrel]);
 
   return (
     <StyledItemWrapper>
@@ -102,28 +123,31 @@ export default function Adrenalina(props) {
         </label>
       </ButtonAreaStyled>
 
-      {(doseValue > 0) & props.content & (checkB || checkA) ? (
+      {(doseValue > 0) & contentVisble & (checkB || checkA) ? (
         <div>
           {bradyActive ? (
             <StyledContent>
               <h1>
                 1 amp adrenaliny rozcieńczyć w {squirrel.a} ml 0.9% NaCl.
-                Ustawić na pompie infuzyjnej przepływ na{" "}
-                {(doseValue * 60) / squirrel.b} ml/h
+                Ustawić na pompie infuzyjnej przepływ na {brady} ml/h
               </h1>
             </StyledContent>
           ) : (
             <StyledContent>
               <h1>
                 1 amp adrenaliny rozcieńczyć w {squirrel.a} ml 0.9% NaCl.
-                Ustawić na pompie przepływ na{" "}
-                {((doseValue * weightValue * 60) / squirrel.b).toFixed(0)} ml/h
+                Ustawić na pompie przepływ na {shock} ml/h
               </h1>
             </StyledContent>
           )}
         </div>
       ) : (
         "Uzupełnij pole"
+      )}
+      {contentVisble ? (
+        <StyledCyrcle onClick={getValue}> X </StyledCyrcle>
+      ) : (
+        <StyledCyrcle onClick={() => setContentVisible(true)}> = </StyledCyrcle>
       )}
     </StyledItemWrapper>
   );

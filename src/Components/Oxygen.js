@@ -1,96 +1,181 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ButtonAreaStyled } from "../Style/ButtonAreaStyled";
 import { StyledItemWrapper } from "../Style/StyledItemWrapper";
 import { StyledButton } from "../Style/StyledButton";
 import { StyledInput } from "../Style/StyledInput";
-import { StyledCyrcle } from "../Style/StyledCyrcle";
+import { StyledTimer } from "../Style/StyledTimer";
 import { StyledSelect } from "../Style/StyledSelect";
 import { StyledRowInput } from "../Style/StyledRowInput";
+import Timer from "./Timer";
+import { StyledCyrcle } from "../Style/StyledCyrcle";
 
 export default function Oxygen(props) {
-  const [valueA, setValueA] = useState("");
+  const [valueA, setValueA] = useState();
   const [valueB, setValueB] = useState();
   const [valueC, setValueC] = useState();
+
+  const [newValueA, setNewValueA] = useState();
+  const [newValueB, setNewValueB] = useState();
 
   const [valueD, setValueD] = useState();
   const [valueE, setValueE] = useState();
 
-  const [activeButtonA, setActiveButtonA] = useState(true)
-  const [activeButtonB, setActiveButtonB] = useState(false)
+  const [activeButtonA, setActiveButtonA] = useState(true);
+  const [activeButtonB, setActiveButtonB] = useState(false);
 
-  const [finishValue, setFinishValue] =useState()
+  const [visibleTimer, setVisibleTimer] = useState(false);
 
+  const [fi, setFi] = useState({
+    value: 1,
+    checked: true,
+  });
+  const changeVisibleTimer = () => {
+    setVisibleTimer(true);
+  };
+  const unVisibleTimer = () => {
+    setVisibleTimer(false);
+    setValueA("");
+    setValueB("");
+    setValueC("");
+    setValueD("");
+    setValueE("");
+  };
 
+  const changeButtonA = () => {
+    setActiveButtonA(true);
+    setActiveButtonB(false);
+  };
+
+  useEffect(() => {
+    setNewValueA((valueA * valueC) / valueB / 60);
+  });
+  useEffect(() => {
+    setNewValueB(
+      (valueA * valueC) / (valueD * (valueE / 1000)) / fi.value / 60
+    );
+  });
 
   return (
     <StyledItemWrapper>
       <ButtonAreaStyled>
-          {activeButtonA ?<StyledButton primary onClick={()=>setActiveButtonA(true) & setActiveButtonB(false)}>Tlenoterapia Bierna</StyledButton> : <StyledButton onClick={()=>setActiveButtonA(true) & setActiveButtonB(false)} >Tlenoterapia Bierna</StyledButton> }
-        {activeButtonB ? <StyledButton primary onClick={()=>setActiveButtonB(true) & setActiveButtonA(false) }>Respirator</StyledButton>:<StyledButton onClick={()=>setActiveButtonB(true) & setActiveButtonA(false)}>Respirator</StyledButton>}
-        
-      </ButtonAreaStyled>  
-      {activeButtonB ? <ButtonAreaStyled small>
-        <label>
-          <StyledSelect
-            type="checkbox"
-          />
-          <p>FiO2=1</p>
-        </label>
+        {activeButtonA ? (
+          <StyledButton primary onClick={changeButtonA}>
+            Tlenoterapia Bierna
+          </StyledButton>
+        ) : (
+          <StyledButton onClick={changeButtonA}>
+            Tlenoterapia Bierna
+          </StyledButton>
+        )}
+        {activeButtonB ? (
+          <StyledButton
+            primary
+            onClick={() => setActiveButtonB(true) & setActiveButtonA(false)}
+          >
+            Respirator
+          </StyledButton>
+        ) : (
+          <StyledButton
+            onClick={() => setActiveButtonB(true) & setActiveButtonA(false)}
+          >
+            Respirator
+          </StyledButton>
+        )}
+      </ButtonAreaStyled>
+      {activeButtonB ? (
+        <ButtonAreaStyled small>
+          <label>
+            <StyledSelect
+              type="checkbox"
+              checked={fi.checked}
+              onChange={() =>
+                setFi({
+                  value: 1,
+                  checked: true,
+                })
+              }
+            />
+            <p>FiO2=1</p>
+          </label>
 
-        <label>
-          <StyledSelect
-            type="checkbox"
-          />
-          <p>FiO2=0.5</p>
-        </label>
-      </ButtonAreaStyled> : ''}
+          <label>
+            <StyledSelect
+              type="checkbox"
+              checked={!fi.checked}
+              onChange={() =>
+                setFi({
+                  value: 0.5,
+                  checked: false,
+                })
+              }
+            />
+            <p>FiO2=0.5</p>
+          </label>
+        </ButtonAreaStyled>
+      ) : (
+        ""
+      )}
       <p>Oddechy</p>
-       
-{activeButtonB ?
- <StyledRowInput>
-          <StyledInput xsmall placeholder="ilość" onChange={(e)=>setValueD(e.target.value)}/>
-          <StyledInput xsmall placeholder="objętość" onChange={(e)=>setValueE(e.target.value)}/>
-        </StyledRowInput>:''
-}
-          
+
+      {activeButtonB ? (
+        <StyledRowInput>
+          <StyledInput
+            xsmall
+            value={valueD}
+            placeholder="ilość"
+            onChange={(e) => setValueD(e.target.value)}
+          />
+          <StyledInput
+            xsmall
+            value={valueE}
+            placeholder="objętość"
+            onChange={(e) => setValueE(e.target.value)}
+          />
+        </StyledRowInput>
+      ) : (
+        ""
+      )}
+
       <StyledInput
-      small
+        small
+        type="number"
+        value={valueA}
         placeholder="ciśnienie w butli bar/atm"
         onChange={(e) => setValueA(e.target.value)}
       />
-      {
-        activeButtonA ? <StyledInput
-        small
+      {activeButtonA ? (
+        <StyledInput
+          small
+          value={valueB}
+          type="number"
           placeholder="przepływ tlenu"
           onChange={(e) => setValueB(e.target.value)}
-        />: ''
-      }
-      
+        />
+      ) : (
+        ""
+      )}
+
       <StyledInput
-      small
+        small
+        value={valueC}
         placeholder="pojemność butli"
         onChange={(e) => setValueC(e.target.value)}
       />
 
-      {(valueA > 0) &(valueC > 0) & props.content ? (
-        <>
-          {activeButtonA ? (valueA * valueC) / valueB  >= 90: (valueA * valueC) /((valueD/1000)*valueE) >= 90 ? (
-            <StyledCyrcle timeCircleLast>
-             {activeButtonA ? ((valueA * valueC) / valueB).toFixed(0): ((valueA * valueC) /((valueD/1000)*valueE)).toFixed(0)} min
-            </StyledCyrcle>
-          ) : activeButtonA ? (valueA * valueC) / valueB  <= 90 &&
-            (valueA * valueC) / valueB  >= 30 : (valueA * valueC) /((valueD/1000)*valueE)<= 90 && (valueA * valueC) /((valueD/1000)*valueE) >=30 ? (
-            <StyledCyrcle timeCircleSec>
-              {activeButtonA ? ((valueA * valueC) / valueB).toFixed(0): ((valueA * valueC) /((valueD/1000)*valueE)).toFixed(0)} min
-            </StyledCyrcle>
-          ) : (
-            <StyledCyrcle timeCircleFirst>
-              {activeButtonA ? ((valueA * valueC) / valueB).toFixed(0):((valueA * valueC) /(valueD*valueE)).toFixed(0)} min
-            </StyledCyrcle>
-          )}
-        </>
+      {visibleTimer ? (
+        <Timer
+          activeA={activeButtonA}
+          newValueA={newValueA}
+          newValueB={newValueB}
+        />
       ) : (
         ""
+      )}
+
+      {visibleTimer ? (
+        <StyledCyrcle onClick={unVisibleTimer}>x</StyledCyrcle>
+      ) : (
+        <StyledCyrcle onClick={changeVisibleTimer}>=</StyledCyrcle>
       )}
     </StyledItemWrapper>
   );

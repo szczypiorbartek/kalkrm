@@ -3,14 +3,14 @@ import { StyledWrapper } from "../Style/StyleWrapper";
 import Header from "./Header";
 import Panel from "./Panel";
 import Adrenalina from "./Adrenalina";
-import { useEffect } from "react/cjs/react.development";
+
 import Modal from "./Modal";
 
 export default function Wrapper(props) {
   const [visiblePanel, setVisiblePanel] = useState(true);
 
   const [title, setTitle] = useState("CO LICZYMY ?");
-  const [contentVisble, setContentVisible] = useState(false);
+  const [contentVisble, setContentVisible] = useState(true);
   const [modalVisible, setMoalVisible] = useState(false);
 
   const [visibleAdrenalina, setVisibleAdrenalina] = useState(false);
@@ -35,7 +35,9 @@ export default function Wrapper(props) {
   };
 
   const chageVisible = () => {
-    setContentVisible(true);
+   
+    setContentVisible(!contentVisble);
+    
   };
 
   return (

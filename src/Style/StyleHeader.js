@@ -8,12 +8,12 @@ import styled from "styled-components";
  padding-left: 3vw;
  background-color: #7370F9;
  display: flex;
- justify-content: space-around;
+ justify-content: space-between;
  align-items:center;
  flex-direction: row;
  color:  white;
- padding-left: 3vw;
- padding-right: 3vw;
+ padding-left: 8vw;
+ padding-right: 8vw;
   
 svg{
   width: 60px;
