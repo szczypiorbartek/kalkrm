@@ -8,7 +8,7 @@ import React from "react";
  padding-top: 5vh;
  background-color: #D8D8D8;
  display: flex;
- justify-content: space-between;
+ justify-content: space-around;
  align-items:center;
  flex-direction: column;
  h1{

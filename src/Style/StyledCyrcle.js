@@ -8,13 +8,12 @@ height: 100px;
 background-color: #FF3C21;
 border-radius: 50%;
 border: solid 8px #D8D8D8;
-
 display: flex;
 justify-content: center;
 align-items: center;
 font-size: 50px;
 color: white;
-margin-top: 77vh;
+margin-top: 68vh;
 z-index: 999;
 
 

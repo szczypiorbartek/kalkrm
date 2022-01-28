@@ -8,6 +8,7 @@ import { StyledSelect } from "../Style/StyledSelect";
 import { StyledRowInput } from "../Style/StyledRowInput";
 import Timer from "./Timer";
 import { StyledCyrcle } from "../Style/StyledCyrcle";
+import Alert from "./Alert";
 
 export default function Oxygen(props) {
   const [valueA, setValueA] = useState();
@@ -24,6 +25,7 @@ export default function Oxygen(props) {
   const [activeButtonB, setActiveButtonB] = useState(false);
 
   const [visibleTimer, setVisibleTimer] = useState(false);
+  const [visibleAlert, setVisibleAlert] = useState(false);
 
   const [fi, setFi] = useState({
     value: 1,
@@ -44,19 +46,48 @@ export default function Oxygen(props) {
   const changeButtonA = () => {
     setActiveButtonA(true);
     setActiveButtonB(false);
+    setValueA("");
+    setValueB("");
+    setValueC("");
+    setValueD("");
+    setValueE("");
+    setVisibleTimer(false)
+    setNewValueA(0)
+    setNewValueB(0)
   };
+  const changeButtonB = () => {
+    setActiveButtonA(false);
+    setActiveButtonB(true);
+    setValueA("");
+    setValueB("");
+    setValueC("");
+    setValueD("");
+    setValueE("");
+    setVisibleTimer(false)
+    setNewValueA(0)
+    setNewValueB(0)
+  };
+  const openAlert = ()=>{
+    setVisibleAlert(true)
+  }
 
   useEffect(() => {
-    setNewValueA((valueA * valueC) / valueB / 60);
+    setNewValueA((valueA * valueC) / valueB);
   });
   useEffect(() => {
     setNewValueB(
-      (valueA * valueC) / (valueD * (valueE / 1000)) / fi.value / 60
+      (valueA * valueC) / (valueD * (valueE / 1000)) / fi.value
     );
   });
 
   return (
+    <>
+      {visibleAlert ?
+        <Alert close={()=>setVisibleAlert(false)}/> : ''
+      }
     <StyledItemWrapper>
+    
+      
       <ButtonAreaStyled>
         {activeButtonA ? (
           <StyledButton primary onClick={changeButtonA}>
@@ -70,13 +101,13 @@ export default function Oxygen(props) {
         {activeButtonB ? (
           <StyledButton
             primary
-            onClick={() => setActiveButtonB(true) & setActiveButtonA(false)}
+            onClick={changeButtonB}
           >
             Respirator
           </StyledButton>
         ) : (
           <StyledButton
-            onClick={() => setActiveButtonB(true) & setActiveButtonA(false)}
+            onClick={changeButtonB}
           >
             Respirator
           </StyledButton>
@@ -162,8 +193,8 @@ export default function Oxygen(props) {
         onChange={(e) => setValueC(e.target.value)}
       />
 
-      {visibleTimer ? (
-        <Timer
+      {visibleTimer && newValueA >0 || visibleTimer && newValueB>0 ? (
+        <Timer 
           activeA={activeButtonA}
           newValueA={newValueA}
           newValueB={newValueB}
@@ -173,10 +204,11 @@ export default function Oxygen(props) {
       )}
 
       {visibleTimer ? (
-        <StyledCyrcle onClick={unVisibleTimer}>x</StyledCyrcle>
+        <StyledCyrcle onClick={unVisibleTimer}>X</StyledCyrcle>
       ) : (
-        <StyledCyrcle onClick={changeVisibleTimer}>=</StyledCyrcle>
+        <StyledCyrcle onClick={newValueA>0 ? changeVisibleTimer :openAlert}>=</StyledCyrcle>
       )}
     </StyledItemWrapper>
+    </>
   );
 }

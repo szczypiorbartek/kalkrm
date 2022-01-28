@@ -4,7 +4,8 @@ import styled,{css} from "styled-components";
 export const ButtonAreaStyled = styled.div`
 width: 100%;
 margin-bottom: 2vh;
-height: auto; 
+height: auto;
+justify-content: center;
 display: grid;
 grid-template-columns: 1fr 1fr;
 grid-gap: 20px;

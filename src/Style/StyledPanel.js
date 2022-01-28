@@ -7,5 +7,6 @@ height: 50vh;
 display: grid;
 grid-template-columns: 1fr 1fr;
 grid-gap: 25px;
+margin-bottom: 25vh;
 
 `

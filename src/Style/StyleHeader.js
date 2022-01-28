@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 
  export const StyledHeader = styled.div`
- 
+ position: fixed;
  width: 100%;
- height: 10vh;
+ min-height:100px ;
  padding-left: 3vw;
  background-color: #7370F9;
  display: flex;
@@ -12,6 +12,7 @@ import styled from "styled-components";
  align-items:center;
  flex-direction: row;
  color:  white;
+ margin-top: 85vh;
  padding-left: 8vw;
  padding-right: 8vw;
   
