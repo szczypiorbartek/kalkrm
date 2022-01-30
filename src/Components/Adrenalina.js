@@ -6,6 +6,10 @@ import { StyledContent } from "../Style/StyledContent";
 import { StyledInput } from "../Style/StyledInput";
 import { StyledSelect } from "../Style/StyledSelect";
 import { StyledCyrcle } from "../Style/StyledCyrcle";
+import {ReactComponent as Close} from '../Assets/close.svg'
+
+
+
 import Alert from "./Alert";
 
 export default function Adrenalina(props) {
@@ -62,7 +66,7 @@ export default function Adrenalina(props) {
   
    
 <StyledItemWrapper>
-     
+     <h1>Adrenalina w pompie</h1>
     { visibleAlert ?  <Alert close={()=>setVisibleAlert(false)}/> : ''}
    
        
@@ -97,9 +101,9 @@ export default function Adrenalina(props) {
        )}
      </ButtonAreaStyled>
      {bradyActive ? (
-       <p>Dawka Adrenaliny w Bardykardi 2-10 mcg/min</p>
+       <p>Dawka w Bardykardi: 2-10 mcg/min</p>
      ) : (
-       <p> Dawka Adrenaliny we wstrząsie 0.05 - 0.5mcg/kg/min</p>
+       <p> Dawka we wstrząsie: 0.05 - 0.5mcg/kg/min</p>
      )}
      <StyledInput
        placeholder="Podaj dawkę w mcg"
@@ -156,6 +160,8 @@ export default function Adrenalina(props) {
                1 amp adrenaliny rozcieńczyć w {squirrel.a} ml 0.9% NaCl.
                Ustawić na pompie infuzyjnej przepływ na {brady} ml/h
              </h1>
+           <StyledButton close onClick={getValue}>zamknij</StyledButton>
+             
            </StyledContent>
          ) : (
            <StyledContent>
@@ -163,6 +169,8 @@ export default function Adrenalina(props) {
                1 amp adrenaliny rozcieńczyć w {squirrel.a} ml 0.9% NaCl.
                Ustawić na pompie przepływ na {shock} ml/h
              </h1>
+             <StyledButton close onClick={getValue}>zamknij</StyledButton>
+             
            </StyledContent>
          )}
        </div>
@@ -170,9 +178,9 @@ export default function Adrenalina(props) {
        "Uzupełnij pole"
      )}
      {contentVisble ? (
-       <StyledCyrcle onClick={ getValue }> X </StyledCyrcle>
+       <StyledCyrcle  unvisible onClick={ getValue }> X </StyledCyrcle>
      ) : (
-       <StyledCyrcle onClick={() =>{brady>0 || squirrel>0 ?  setContentVisible(true) : setVisibleAlert(true) }}> = </StyledCyrcle>
+       <StyledCyrcle onClick={() =>{brady>0 || squirrel>0 ?  setContentVisible(true) : setVisibleAlert(true) }}> Licz </StyledCyrcle>
      )}
    </StyledItemWrapper>
  );

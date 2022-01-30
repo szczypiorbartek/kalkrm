@@ -2,7 +2,7 @@ import React from "react";
 import styled,{css} from "styled-components";
 
 export const StyledButton= styled.button`
-min-width: 30vw;
+
 height: 7vh;
 margin-top: 3vh;
 font-size: 20px;
@@ -20,5 +20,21 @@ ${props =>
       background: #7370F9;
       color: white;
     `};
+    ${props =>
+    props.close &&
+    css`
+     width: 40%;
+height: 30px;
+background-color: red;
+opacity: .8;
+color: white;
+display: flex;
+border: none;
+justify-content: center;
+align-items:center;
+border-radius: 10px;
+margin-bottom:10px;
+    `};
 
 `
+

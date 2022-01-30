@@ -82,6 +82,7 @@ export default function Oxygen(props) {
 
   return (
     <>
+    <h1>Tlen</h1>
       {visibleAlert ?
         <Alert close={()=>setVisibleAlert(false)}/> : ''
       }
@@ -198,15 +199,16 @@ export default function Oxygen(props) {
           activeA={activeButtonA}
           newValueA={newValueA}
           newValueB={newValueB}
+          unvisible={unVisibleTimer}
         />
       ) : (
         ""
       )}
 
       {visibleTimer ? (
-        <StyledCyrcle onClick={unVisibleTimer}>X</StyledCyrcle>
+        <StyledCyrcle unvisible onClick={unVisibleTimer}>X</StyledCyrcle>
       ) : (
-        <StyledCyrcle onClick={newValueA>0 ? changeVisibleTimer :openAlert}>=</StyledCyrcle>
+        <StyledCyrcle onClick={newValueA>0 ? changeVisibleTimer :openAlert}>Licz</StyledCyrcle>
       )}
     </StyledItemWrapper>
     </>

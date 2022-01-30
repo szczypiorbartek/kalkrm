@@ -16,6 +16,11 @@ border-radius: 20px;
 z-index: 999;
 box-shadow: rgba(0, 0, 0, 0.70) 0px 7px 17px;
 animation: open  0.3s ease-in-out;
+color: white;
+h1{
+    color: white;
+    margin-bottom: 5vh;
+}
 
 
 @keyframes open {
@@ -27,10 +32,7 @@ animation: open  0.3s ease-in-out;
   }
 
 }
-h1{
-    color: white;
-    margin-bottom: 5vh;
-}
+
 
 `
 const CloseButton = styled.button`

@@ -3,7 +3,7 @@ import styled,{css} from "styled-components";
 
 export const StyledInput = styled.input`
 width: 80vw;
-height: 6vh;
+height: 50px;
 margin-top: 2vh;
 font-size: 25px;
 padding: 5%;
@@ -32,5 +32,10 @@ ${props =>
     padding: 3%;
     transform: translateY(150);
     `};
+
+    @media (min-width: 750px) {
+    width: 450px;
+    
+}
 `
 

@@ -23,8 +23,15 @@ ${props =>
     css`
     height: 20vw;
     margin:0px;
-    
+    @media (min-width: 750px) {
+    width: 750px;
+    height: 100px;
     
    
     `};
+
+    @media (min-width: 750px) {
+    width: 750px;
+   
+}
 `

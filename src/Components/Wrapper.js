@@ -42,7 +42,7 @@ export default function Wrapper(props) {
 
   return (
     <StyledWrapper>
-      <h1>{title}</h1>
+  {visiblePanel? <h1>ambuKalk</h1>:''}
       {visiblePanel ? (
         <Panel openAdrenalina={AdrenalinaOpen} openOxygen={OxygenOpen} />
       ) : (
