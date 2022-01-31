@@ -4,7 +4,7 @@ import React from "react";
  export const StyledWrapper = styled.div`
  position: relative;
  width:100%;
- height: 100vh;
+ height: 100%;
  
  background-color: #D8D8D8;
  display: flex;
@@ -16,11 +16,23 @@ import React from "react";
      font-size: 1.4em;
      color:#3E3E3E;
  }
- @media (min-width: 750px) {
+ @media (min-width: 300px) and (max-width:699px) {
+  
+   height:100%;
+    
+}
+ @media (min-width: 700px) {
+     display: flex;
     width: 750px;
-    height: 90vh;
+    height: 100%;
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.70) 0px 5px 15px;
 }
+@media (max-width: 299px) {
+    height: auto;
+    padding-bottom: 10%;
+  
+}
+
 
  `

@@ -2,10 +2,10 @@ import React from "react";
 import styled from "styled-components";
 
 export const StyledHeader = styled.div`
-  position: relative;
+  position: fixed;
   width: 100%;
   height: auto;
-
+  bottom: 0;
   background-color: #7370f9;
   display: flex;
   justify-content: space-between;
@@ -26,4 +26,10 @@ export const StyledHeader = styled.div`
     border-radius: 20px;
    
 }
+
+@media (max-width: 299px) {
+    position: fixed;
+  
+    top:90%;
+  }
 `;
