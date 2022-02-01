@@ -11,7 +11,7 @@ export default function Wrapper(props) {
 
   const [title, setTitle] = useState("CO LICZYMY ?");
   const [contentVisble, setContentVisible] = useState(true);
-  const [modalVisible, setMoalVisible] = useState(false);
+
 
   const [visibleAdrenalina, setVisibleAdrenalina] = useState(false);
   const [visibleOxygen, setVisibleOxygen] = useState(false);

@@ -1,7 +1,7 @@
-import React from "react";
+import React,{useState} from "react";
 import Adrenalina from "./Adrenalina";
 import Oxygen from "./Oxygen";
-import { useState } from "react/cjs/react.development";
+
 import { StyledModal } from "../Style/StyledModal";
 
 const Modal = (props) =>{
