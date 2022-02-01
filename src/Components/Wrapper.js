@@ -24,10 +24,11 @@ export default function Wrapper(props) {
     setTitle("Co Liczymy ?");
   };
   const AdrenalinaOpen = (e) => {
-    e.prventDefault(),
+   
     setVisibleAdrenalina(!visibleAdrenalina);
     setTitle("Adrenalina w pompie");
     setVisiblePanel(!visiblePanel);
+    e.prventDefault();
 
   };
   const OxygenOpen = () => {
