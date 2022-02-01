@@ -23,10 +23,12 @@ export default function Wrapper(props) {
     setContentVisible(false)
     setTitle("Co Liczymy ?");
   };
-  const AdrenalinaOpen = () => {
+  const AdrenalinaOpen = (e) => {
+    e.prventDefault(),
     setVisibleAdrenalina(!visibleAdrenalina);
     setTitle("Adrenalina w pompie");
     setVisiblePanel(!visiblePanel);
+
   };
   const OxygenOpen = () => {
     setVisibleOxygen(!visibleOxygen);
