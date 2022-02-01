@@ -105,6 +105,7 @@ export default function Adrenalina(props) {
      ) : (
        <p> Dawka we wstrząsie: 0.05 - 0.5mcg/kg/min</p>
      )}
+     <label>
      <StyledInput
        placeholder="Podaj dawkę w mcg"
        type="number"
@@ -121,6 +122,7 @@ export default function Adrenalina(props) {
      ) : (
        ""
      )}
+     </label>
 
      <ButtonAreaStyled>
        <label>
@@ -175,7 +177,7 @@ export default function Adrenalina(props) {
          )}
        </div>
      ) : (
-       "Uzupełnij pole"
+       ""
      )}
      {contentVisble ? (
        <StyledCyrcle  unvisible onClick={ getValue }> X </StyledCyrcle>

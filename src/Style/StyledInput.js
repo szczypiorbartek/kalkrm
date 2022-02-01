@@ -2,11 +2,9 @@ import React from "react";
 import styled,{css} from "styled-components";
 
 export const StyledInput = styled.input`
-width: 80vw;
-height: 50px;
-margin-top: 2vh;
-font-size: 25px;
-padding: 5%;
+margin: 10px;
+font-size: 20px;
+padding: 15px;
 text-align: center;
 outline: none;
 border:none;
@@ -33,9 +31,6 @@ ${props =>
     transform: translateY(150);
     `};
 
-    @media (min-width: 750px) {
-    width: 450px;
-    
-}
+   
 `
 

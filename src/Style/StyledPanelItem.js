@@ -2,43 +2,31 @@ import React from "react";
 import styled from "styled-components";
 export const StyledPanelItem = styled.div`
 
+position: relative;
 background-color: #BDBDBD;
-
+min-width: 150px;
+max-width: 300px;
+width: 40%;
+height: auto;
 border-radius: 10%;
 box-shadow: rgba(0, 0, 0, 0.70) 0px 5px 15px;
 display:flex;
 justify-content: space-around;
 align-items: center;
+text-align: center;
 flex-direction: column;
-padding-top: 2vh;
-padding-bottom: 2vh;
+padding-top: 5vh;
+padding-bottom: 5vh;
 
 
-@media (min-width: 300px) and (max-width:699px) {
-
+margin: 15px;
 img{
-      width: 70px;
-      height: 70px;
-     
-  }
-    
+  max-width: 60px;
+  max-height: 60px;
+  margin-bottom: 15px;
 }
 
-@media (min-width: 700px) {
 
-
-
-  img{
-      width: 100px;
-      height: 80px;
-     
-  }
-}
-@media (max-width: 300px) {
-  position: relative;
-   height: 180px;
-   margin-bottom: 10px;
-}
 
 
 `

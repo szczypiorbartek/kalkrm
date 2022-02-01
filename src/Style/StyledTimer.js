@@ -30,8 +30,5 @@ h2{
     font-size: 1.2em;
     color:#3E3E3E;
 }
-@media (min-width: 750px) {
-    width: 450px;
-    
-}
+
 `

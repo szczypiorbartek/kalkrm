@@ -1,19 +1,7 @@
 .App{
     position: relative;
     width: 100vw;
-    height: 100vh;
-    background-color: honeydew;
-
    
-    
-
+    background-color: honeydew;
 }
-@media screen and (min-width: 700px) {
-    .App{
 
-     display: flex;
-     justify-content: center;
-     align-items: center;
-    }
-     
- }

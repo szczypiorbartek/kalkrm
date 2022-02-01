@@ -40,10 +40,7 @@ h1{
     opacity:1;
   }
 }
-@media (min-width: 750px) {
-    width: 700px;
-    
-}
+
 
 
 `
