@@ -10,6 +10,7 @@ import Timer from "./Timer";
 import { StyledCyrcle } from "../Style/StyledCyrcle";
 import Alert from "./Alert";
 import { ColumnStyle } from "../Style/ColumnStyle";
+import { CheckStyled } from "../Style/CheckStyled";
 
 export default function Oxygen(props) {
   const [valueA, setValueA] = useState();
@@ -117,8 +118,8 @@ export default function Oxygen(props) {
       </ButtonAreaStyled>
       {activeButtonB ? (
         <ButtonAreaStyled small>
-          <label>
-            <StyledSelect
+          <CheckStyled>
+          <StyledSelect
               type="checkbox"
               checked={fi.checked}
               onChange={() =>
@@ -129,9 +130,9 @@ export default function Oxygen(props) {
               }
             />
             <p>FiO2=1</p>
-          </label>
+         
 
-          <label>
+        
             <StyledSelect
               type="checkbox"
               checked={!fi.checked}
@@ -143,7 +144,9 @@ export default function Oxygen(props) {
               }
             />
             <p>FiO2=0.5</p>
-          </label>
+          
+          </CheckStyled>
+           
         </ButtonAreaStyled>
       ) : (
         ""
