@@ -23,6 +23,7 @@ margin-top: 10px;
  justify-content: center;
 align-items: center;
 
+
    
    
    
@@ -40,10 +41,7 @@ ${props =>
 @media (min-width:450px) {
      width: 80%;
      font-size: 10px;
-    label{
-      
-      
-    }
+    
     }
 
 `
