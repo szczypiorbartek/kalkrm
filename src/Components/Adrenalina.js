@@ -7,10 +7,12 @@ import { StyledInput } from "../Style/StyledInput";
 import { StyledSelect } from "../Style/StyledSelect";
 import { StyledCyrcle } from "../Style/StyledCyrcle";
 import {ReactComponent as Close} from '../Assets/close.svg'
+import {CheckStyled} from "../Style/CheckStyled"
 
 
 
 import Alert from "./Alert";
+import CheckSTyled from "../Style/CheckStyled";
 
 export default function Adrenalina(props) {
   const [bradyActive, setBradyActive] = useState(true);
@@ -125,8 +127,8 @@ export default function Adrenalina(props) {
      </label>
 
      <ButtonAreaStyled>
-       <label>
-         <>
+       
+         <CheckStyled>
          <input
            type="checkbox"
            checked={checkA}
@@ -138,9 +140,9 @@ export default function Adrenalina(props) {
            }}
          />
          <p>20 ml</p>
-         </>
+         
         
-    <>
+  
     <input
            type="checkbox"
            checked={checkB}
@@ -152,9 +154,8 @@ export default function Adrenalina(props) {
            }}
          />
          <p>50 ml</p>
-    </>
-         
-       </label>
+         </CheckStyled>
+       
      </ButtonAreaStyled>
 
      {(doseValue > 0) & contentVisble & (checkB || checkA) ? (

@@ -13,7 +13,7 @@ grid-template-columns: 1fr 1fr;
 grid-gap: 20px;
 padding-left: 15px;
 padding-right: 15px;
-label{
+/* label{
     position: absolute;
     width: 100%;
 height: 50px;
@@ -22,12 +22,12 @@ margin-top: 10px;
  flex-direction: row;
  justify-content: center;
 align-items: center;
+background-color: black;
 
-
    
    
    
-}
+} */
 label p {
     margin-left: 20px;
     margin-right: 20px;
@@ -41,7 +41,6 @@ ${props =>
 @media (min-width:450px) {
      width: 80%;
      font-size: 10px;
-    
     }
 
 `

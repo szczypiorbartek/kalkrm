@@ -10,6 +10,16 @@ import React from "react";
  display: flex;
  justify-content: center;
  align-items: center;
+ label {
+    position: relative;
+    width: 95%;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+  }
  h1{
      margin-top: 25px;
      font-size: 1.4em;

@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 
 export const StyledItemWrapper = styled.div`
-  position: absolute;
-  width: 100%;
+  position: relative;
+  width: 100vw;
   height: 100vh;
   background-color: #d8d8d8;
   display: flex;
@@ -18,12 +18,11 @@ export const StyledItemWrapper = styled.div`
   }
   label {
     position: relative;
-    width: 95%;
+    width: 80%;
     height: 80px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  
+   
+
     
   }
 
