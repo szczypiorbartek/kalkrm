@@ -22,8 +22,6 @@ export default function Panel(props) {
              <PanelItem icon={fire} name={"Oparzenia"}/>
         
 
-
-
           </StyledPanel>
           
               

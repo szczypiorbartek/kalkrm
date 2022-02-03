@@ -2,8 +2,10 @@ import React from "react";
 import styled,{css} from "styled-components";
 
 export const ButtonAreaStyled = styled.div`
-width: 90%;
-max-width: 520px;
+
+width:95%;
+max-width: 320px;
+
 margin-bottom: 2vh;
 justify-content: center;
 display: grid;
@@ -12,10 +14,10 @@ grid-gap: 20px;
 padding-left: 15px;
 padding-right: 15px;
 label{
+    width: 95%;
    display: flex;
-   justify-content: center;
-   align-items: center;
-   flex-direction: column;
+   flex-direction: row;
+   
    
 }
 ${props =>
@@ -24,6 +26,11 @@ ${props =>
     height: 20vw;
     margin:0px;
     `};
+    @media (min-width:450px) {
+     width: 80%;
+     font-size: 10px;
+     justify-content: center;
+     
+    }
 
- 
 `

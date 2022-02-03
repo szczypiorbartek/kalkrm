@@ -3,9 +3,7 @@ import styled from "styled-components";
 
 export const StyledContent = styled.div`
 position: relative;
-width: 85vw;
-min-height: 25vh;
-max-height: 43vh;
+width: 80vw;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -14,13 +12,13 @@ background-color: #F2F2F2;
 border-radius: 20px;
 box-shadow: rgba(0, 0, 0, 0.20) 0px 5px 15px;
 text-align: center;
-padding: 2%;
 animation: open  0.2s ease-in-out;
 margin-bottom: 10px;
+padding: 2%;
 
 h1{
-    font-size: 1.2em;
-    line-height: 35px;
+    font-size: 1em;
+   
     
 }
  svg{
@@ -40,6 +38,10 @@ h1{
     opacity:1;
   }
 }
+@media (min-width:450px) {
+   font-size: .8em;
+    }
+
 
 
 

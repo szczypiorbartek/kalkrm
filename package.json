@@ -11,7 +11,7 @@
     "react-router-dom": "^6.0.0-beta.0",
     "react-scripts": "5.0.0",
     "styled-components": "^5.3.3",
-    "web-vitals": "^2.1.3",
+    "web-vitals": "^2.1.3"
     
   },
   "scripts": {
@@ -47,6 +47,6 @@
   "devDependencies": {
     "gh-pages": "^3.2.3"
   },
-  "homepage": "http://bszczypior.github.io/medkalk"
+  "homepage": "http://bszczypior.github.io/medkalk/"
 } 
 

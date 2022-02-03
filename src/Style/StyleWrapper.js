@@ -3,6 +3,7 @@ import React from "react";
 
  export const StyledWrapper = styled.div`
  position: absolute;
+ padding: 20px;
  width:100%;
 
  background-color:#D8D8D8;

@@ -14,7 +14,7 @@ export const StyledItemWrapper = styled.div`
   }
   p {
     font-size: 1em;
-    margin: 10px 0;
+    margin: 35px 0;
   }
   label {
     position: relative;
@@ -28,21 +28,29 @@ export const StyledItemWrapper = styled.div`
   }
 
   @media (min-width: 450px) {
+    
     h1 {
-      font-size: 1.1em;
+      font-size: .8em;
     }
     p {
+      font-size: 0.6rem;
       margin: 5px 0px;
     }
 
     label {
+      position: relative;
       flex-direction: row;
       position: relative;
-      width: 95%;
-      height: 60px;
+      width: 60%;
+     height: auto;
+     
       display: flex;
       justify-content: center;
       margin: 0;
     }
   }
+
+  @media (min-width:500px) {
+     
+    }
 `;
