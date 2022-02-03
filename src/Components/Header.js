@@ -6,7 +6,9 @@ import {ReactComponent as Menu} from '../Assets/menu.svg'
 export default function Header(props) {
     return (
        <StyledHeader>
-
+           <Home  onClick={props.back}/>
+           
+        <Menu onClick={props.clearContent}/>
        </StyledHeader>
     )
 }

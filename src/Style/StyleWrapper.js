@@ -5,8 +5,9 @@ import React from "react";
  position: absolute;
 
  width:100%;
+ height: 100vh;
 
- background-color:#FDFFFC;
+ background-color:#FFE066;
  display: flex;
  justify-content: center;
  align-items: center;

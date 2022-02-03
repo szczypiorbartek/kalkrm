@@ -6,7 +6,7 @@ export const StyledHeader = styled.div`
   width: 100vw;
   height: auto;
   bottom: 0;
-  background-color: #ffee32;
+  background-color: #7899D4;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -18,8 +18,8 @@ export const StyledHeader = styled.div`
   color: #FFD100;
 
   svg {
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     
   }
  

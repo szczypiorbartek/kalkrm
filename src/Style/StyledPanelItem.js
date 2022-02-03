@@ -3,13 +3,13 @@ import styled from "styled-components";
 export const StyledPanelItem = styled.div`
 
 position: relative;
-background-color:#d6d6d6;
+background-color:#D7F9FF;
 min-width: 150px;
 max-width: 300px;
 width: 40%;
 height: auto;
 border-radius: 10%;
-box-shadow: rgba(0, 0, 0, 0.70) 0px 5px 15px;
+box-shadow: rgba(0, 0, 0, 0.50) 0px 5px 20px;
 display:flex;
 justify-content: space-around;
 align-items: center;

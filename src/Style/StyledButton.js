@@ -9,14 +9,14 @@ box-shadow: rgba(0, 0, 0, 0.20) 0px 5px 15px;
 background-color: #E9E9E9;
 border:none;
 border-radius: 15px;
-color:#3E3E3E;
+color:#4E4E4E;
 font-weight: bold;
 transition: .5s;
 
 ${props =>
     props.primary &&
     css`
-      background: #ffee32;
+      background: #7899D4;
       color: white;
     `};
     ${props =>
@@ -35,10 +35,6 @@ border-radius: 10px;
 margin-bottom:10px;
     `};
 
-    @media (min-width:450px) {
-     width: 200px;
-     height: 30px;
-     font-size: 12px;
-    }
+
 `
 
