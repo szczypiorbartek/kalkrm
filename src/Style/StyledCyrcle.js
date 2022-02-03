@@ -12,7 +12,7 @@ justify-content: center;
 align-items: center;
 font-size: 1.5em;
 color: white;
-top: 20px;
+top: 20;
 
 ${props=>props.unvisible &&
 css`
