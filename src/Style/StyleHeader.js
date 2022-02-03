@@ -18,8 +18,8 @@ export const StyledHeader = styled.div`
   color: #FFD100;
 
   svg {
-    width: 35px;
-    height: 35px;
+    width: 20px;
+    height: 20px;
     
   }
  
