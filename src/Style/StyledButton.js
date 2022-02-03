@@ -9,7 +9,7 @@ box-shadow: rgba(0, 0, 0, 0.20) 0px 5px 15px;
 background-color: #E9E9E9;
 border:none;
 border-radius: 15px;
-color:#4E4E4E;
+color:#3E3E3E;
 font-weight: bold;
 transition: .5s;
 
