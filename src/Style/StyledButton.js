@@ -4,7 +4,10 @@ import styled,{css} from "styled-components";
 export const StyledButton= styled.button`
 margin-top: 3vh;
 font-size: 20px;
-padding:10px;
+width: 150px;
+height: 50px;
+padding: 4%;
+
 box-shadow: rgba(0, 0, 0, 0.20) 0px 5px 15px;
 background-color: #E9E9E9;
 border:none;
@@ -34,7 +37,13 @@ align-items:center;
 border-radius: 10px;
 margin-bottom:10px;
     `};
-
+    @media (min-width:450px) {
+      font-size: 10px;
+      padding: 2%;
+      width: 140px;
+height: 30px;
+   
+}
 
 `
 

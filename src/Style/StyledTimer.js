@@ -2,15 +2,17 @@ import React from "react";
 import styled,{css}from "styled-components";
 
 export const StyledTimer = styled.div`
-position: relative;
-width: 85vw;
-background-color: #E9E9E9;
+position: fixed;
+top: 0;
+width: 100vw;
+height: 100vh;
+background-color: #F2F2F2;
 box-shadow: rgba(0, 0, 0, 0.20) 0px 5px 15px;
-border-radius: 20px;
-margin: 20px 20px;
+
+
 display: flex;
 flex-direction: column;
-justify-content:space-around;
+justify-content:center;
 align-items: center;
 animation: open ease-in-out .2s;
 

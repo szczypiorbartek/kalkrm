@@ -14,7 +14,7 @@ grid-gap: 20px;
 padding-left: 15px;
 padding-right: 15px;
 label{
-    position: absolute;
+    position: relative;
     width: 100%;
 height: 50px;
 margin-top: 10px;
@@ -36,10 +36,18 @@ ${props =>
     css`
     height: 20vw;
     margin:0px;
+
+    @media (min-width:450px) {
+    height: 5vw;
+    
+    }
     `};
 @media (min-width:450px) {
      width: 80%;
      font-size: 10px;
+     display: flex;
+     flex-direction: row;
+    
     }
 
 `

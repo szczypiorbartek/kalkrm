@@ -5,8 +5,10 @@ export const StyledRowInput= styled.div`
 width: 100%;
 display: flex;
 flex-direction: row;
-justify-content: space-around;
+justify-content: center;
 padding-left: 5vw;
 padding-right: 5vw;
 transform: translateY(-10px);
+
+
 `

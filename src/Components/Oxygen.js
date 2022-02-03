@@ -9,6 +9,7 @@ import { StyledRowInput } from "../Style/StyledRowInput";
 import Timer from "./Timer";
 import { StyledCyrcle } from "../Style/StyledCyrcle";
 import Alert from "./Alert";
+import { ColumnStyle } from "../Style/ColumnStyle";
 
 export default function Oxygen(props) {
   const [valueA, setValueA] = useState();
@@ -82,12 +83,12 @@ export default function Oxygen(props) {
 
   return (
     <>
-    <h1>Tlen</h1>
+   
       {visibleAlert ?
         <Alert close={()=>setVisibleAlert(false)}/> : ''
       }
     <StyledItemWrapper>
-    
+    <h1>Tlen</h1>
       
       <ButtonAreaStyled>
         {activeButtonA ? (
@@ -167,8 +168,8 @@ export default function Oxygen(props) {
       ) : (
         ""
       )}
-
-      <StyledInput
+<ColumnStyle>
+<StyledInput
         small
         type="number"
         value={valueA}
@@ -193,6 +194,8 @@ export default function Oxygen(props) {
         placeholder="pojemność butli"
         onChange={(e) => setValueC(e.target.value)}
       />
+</ColumnStyle>
+      
 
       {visibleTimer && newValueA >0 || visibleTimer && newValueB>0 ? (
         <Timer 

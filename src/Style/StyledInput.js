@@ -5,7 +5,7 @@ export const StyledInput = styled.input`
 
 margin: 10px;
 font-size: 20px;
-padding: 2%;
+padding: 4%;
 text-align: center;
 outline: none;
 border:none;
@@ -18,26 +18,33 @@ ${props =>
     props.small &&
     css`
     width: 70vw;
-    height: 5vh;
+    
     font-size: 20px;
     padding: 3%;
+    @media (min-width:450px) {
+     width: 30vw;
+     font-size: 10px;
+     padding: 2%;
+    
+    }
     `};
     ${props =>
     props.xsmall &&
     css`
     width: 30vw;
-    height: 4vh;
+    height: 40px;
     font-size: 20px;
     padding: 3%;
-    transform: translateY(150);
+   
+    @media (min-width:450px) {
+    
+     font-size: 10px;
+     padding: 2%;
+
+    }
     `};
 
-    @media (min-width:450px) {
-     width: 180px;
-     height: 25px;
-     font-size: 10px;
-    
-    }
+
 
    
 `
