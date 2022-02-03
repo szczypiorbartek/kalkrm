@@ -29,8 +29,7 @@ ${props =>
     @media (min-width:450px) {
      width: 80%;
      font-size: 10px;
-     justify-content: center;
-     
+    
     }
 
 `
