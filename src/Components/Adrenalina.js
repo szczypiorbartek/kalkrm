@@ -126,6 +126,7 @@ export default function Adrenalina(props) {
 
      <ButtonAreaStyled>
        <label>
+         <>
          <StyledSelect
            type="checkbox"
            checked={checkA}
@@ -137,10 +138,10 @@ export default function Adrenalina(props) {
            }}
          />
          <p>20 ml</p>
-       </label>
-
-       <label>
-         <StyledSelect
+         </>
+        
+    <>
+    <StyledSelect
            type="checkbox"
            checked={checkB}
            value={50}
@@ -151,6 +152,8 @@ export default function Adrenalina(props) {
            }}
          />
          <p>50 ml</p>
+    </>
+         
        </label>
      </ButtonAreaStyled>
 

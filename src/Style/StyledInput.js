@@ -36,7 +36,7 @@ ${props =>
      width: 180px;
      height: 25px;
      font-size: 10px;
-     
+    
     }
 
    

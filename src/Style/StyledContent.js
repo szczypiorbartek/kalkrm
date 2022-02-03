@@ -2,8 +2,9 @@ import React from "react";
 import styled from "styled-components";
 
 export const StyledContent = styled.div`
-position: relative;
-width: 80vw;
+position: fixed;
+width: 100%;
+height: 100vh;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -13,9 +14,10 @@ border-radius: 20px;
 box-shadow: rgba(0, 0, 0, 0.20) 0px 5px 15px;
 text-align: center;
 animation: open  0.2s ease-in-out;
-margin-bottom: 10px;
+/* margin-bottom: 10px; */
 padding: 2%;
-
+top:0;
+left: 0;
 h1{
     font-size: 1em;
    
