@@ -22,7 +22,6 @@ margin-top: 10px;
  flex-direction: row;
  justify-content: center;
 align-items: center;
-background-color: black;
 
    
    
