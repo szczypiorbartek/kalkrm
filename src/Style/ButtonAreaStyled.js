@@ -13,7 +13,7 @@ grid-template-columns: 1fr 1fr;
 grid-gap: 20px;
 padding-left: 15px;
 padding-right: 15px;
-/* label{
+label{
     position: absolute;
     width: 100%;
 height: 50px;
@@ -27,7 +27,7 @@ background-color: black;
    
    
    
-} */
+} 
 label p {
     margin-left: 20px;
     margin-right: 20px;

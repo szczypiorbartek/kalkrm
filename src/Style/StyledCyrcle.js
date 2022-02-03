@@ -12,7 +12,6 @@ justify-content: center;
 align-items: center;
 font-size: 2em;
 color: white;
-bottom: 2vh;
 
 ${props=>props.unvisible &&
 css`
@@ -20,7 +19,7 @@ display: none;
 `}
 
  @media (min-width: 450px){
-    width: 150px;
-height: 50px;
+    width: 125px;
+height: 40px;
 } 
 `
