@@ -6,7 +6,7 @@ import React from "react";
 
  width:100%;
 
- background-color:#D8D8D8;
+ background-color:#FDFFFC;
  display: flex;
  justify-content: center;
  align-items: center;

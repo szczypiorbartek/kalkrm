@@ -5,7 +5,7 @@ export const StyledItemWrapper = styled.div`
   position: relative;
   width: 100vw;
   height: 100vh;
-  background-color: #d8d8d8;
+  background-color: #FDFFFC;
   display: flex;
   flex-direction: column;
   align-items: center;

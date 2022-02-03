@@ -16,7 +16,7 @@ transition: .5s;
 ${props =>
     props.primary &&
     css`
-      background: #7370F9;
+      background: #ffee32;
       color: white;
     `};
     ${props =>
@@ -36,7 +36,7 @@ margin-bottom:10px;
     `};
 
     @media (min-width:450px) {
-     width: 150px;
+     width: 200px;
      height: 30px;
      font-size: 12px;
     }

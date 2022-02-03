@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const StyledPanelItem = styled.div`
 
 position: relative;
-background-color: #BDBDBD;
+background-color:#d6d6d6;
 min-width: 150px;
 max-width: 300px;
 width: 40%;
@@ -17,6 +17,7 @@ text-align: center;
 flex-direction: column;
 padding-top: 5vh;
 padding-bottom: 5vh;
+
 
 
 margin: 15px;

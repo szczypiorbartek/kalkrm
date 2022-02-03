@@ -6,7 +6,7 @@ export const StyledHeader = styled.div`
   width: 100vw;
   height: auto;
   bottom: 0;
-  background-color: #7370f9;
+  background-color: #ffee32;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -15,10 +15,12 @@ export const StyledHeader = styled.div`
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
   padding: 10px 0px;
+  color: #FFD100;
 
   svg {
     width: 30px;
     height: 30px;
+    
   }
  
 `;
