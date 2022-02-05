@@ -31,7 +31,7 @@ ${props =>
     ${props =>
     props.xsmall &&
     css`
-    width: 30vw;
+    width: 40vw;
     height: 40px;
     font-size: 20px;
     padding: 3%;
@@ -43,7 +43,10 @@ ${props =>
 
     }
     `};
-
+    @media (min-width:450px) {
+    
+    font-size: 15px;
+    padding: 2%;
 
 
    

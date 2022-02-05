@@ -2,9 +2,9 @@ import React from "react";
 import styled,{css}from "styled-components";
 
 export const StyledCyrcle = styled.div`
-position: relative;
+position:relative;
 background-color: #FF3C21;
-padding: 2% 5%;
+padding: 2% 8%;
 border-radius: 15px;
 box-shadow: rgba(0, 0, 0, 0.60) 0px 5px 15px;
 display: flex;
@@ -12,7 +12,8 @@ justify-content: center;
 align-items: center;
 font-size: 1.5em;
 color: white;
-top: 20;
+top:20px;
+
 
 ${props=>props.unvisible &&
 css`

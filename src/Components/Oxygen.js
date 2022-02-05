@@ -119,6 +119,7 @@ export default function Oxygen(props) {
       {activeButtonB ? (
         <ButtonAreaStyled small>
           <CheckStyled>
+           
           <StyledSelect
               type="checkbox"
               checked={fi.checked}
@@ -151,14 +152,17 @@ export default function Oxygen(props) {
       ) : (
         ""
       )}
-      <p>Oddechy</p>
+      
+     
 
       {activeButtonB ? (
+        
         <StyledRowInput>
+          
           <StyledInput
             xsmall
             value={valueD}
-            placeholder="ilość"
+            placeholder="ilość oddechów"
             onChange={(e) => setValueD(e.target.value)}
           />
           <StyledInput
@@ -194,6 +198,7 @@ export default function Oxygen(props) {
       <StyledInput
         small
         value={valueC}
+        type="number"
         placeholder="pojemność butli"
         onChange={(e) => setValueC(e.target.value)}
       />
