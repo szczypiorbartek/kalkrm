@@ -12,7 +12,7 @@ export default function Panel(props) {
         
           <StyledPanel>
               
-             <PanelItem open={props.openAdrenalina} icon={adrenalina} name={"Adrenalina w pomie"}/>
+             <PanelItem open={props.openAdrenalina} icon={adrenalina} name={"Adrenalina w pompie"}/>
              <PanelItem open={props.openOxygen} icon={oxy} name={"Ile tlenu ?"}/>
              <PanelItem icon={child} name={"Dawki dla dzieci"}/>
              <PanelItem icon={fire} name={"Oparzenia"}/>
