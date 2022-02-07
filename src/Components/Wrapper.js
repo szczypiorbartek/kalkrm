@@ -23,6 +23,7 @@ export default function Wrapper(props) {
     setVisibleOxygen(false);
     setContentVisible(false)
     setTitle("Co Liczymy ?");
+    setMenuOpen(false)
   };
   const AdrenalinaOpen = (e) => {
    
