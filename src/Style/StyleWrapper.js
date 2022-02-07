@@ -7,7 +7,7 @@ import React from "react";
  width:100%;
  min-height: 100vh;
 
- background-color:#FFE066;
+ background-color:#7899D4;
  display: flex;
  justify-content: center;
  align-items: center;

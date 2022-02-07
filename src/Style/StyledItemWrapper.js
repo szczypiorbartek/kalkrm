@@ -20,6 +20,7 @@ export const StyledItemWrapper = styled.div`
     position: relative;
     width: 80%;
     height: 80px;
+    margin: 20px 0px;
   
    
 

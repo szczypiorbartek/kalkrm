@@ -13,6 +13,7 @@ grid-template-columns: 1fr 1fr;
 grid-gap: 20px;
 padding-left: 15px;
 padding-right: 15px;
+
 label{
     position: relative;
     width: 100%;

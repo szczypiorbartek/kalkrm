@@ -15,6 +15,7 @@ export default function Wrapper(props) {
 
   const [visibleAdrenalina, setVisibleAdrenalina] = useState(false);
   const [visibleOxygen, setVisibleOxygen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false)
 
   const Home = () => {
     setVisiblePanel(true);
@@ -42,6 +43,10 @@ export default function Wrapper(props) {
     setContentVisible(!contentVisble);
     
   };
+  const openMenu = () =>{
+    console.log("open")
+  setMenuOpen(!menuOpen)
+  }
 
   return (
     <StyledWrapper>
@@ -55,8 +60,9 @@ export default function Wrapper(props) {
           contentVisible={contentVisble}
         />
       )}
+     
 
-      <Header back={Home} visibleCont={chageVisible} />
+      <Header back={Home} visibleCont={chageVisible} open={menuOpen} openMenu={openMenu}/>
     </StyledWrapper>
   );
 }

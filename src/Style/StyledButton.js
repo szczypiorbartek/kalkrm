@@ -42,6 +42,7 @@ margin-bottom:10px;
       padding: 2%;
       width: 140px;
 height: 30px;
+
    
 }
 
