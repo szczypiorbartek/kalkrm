@@ -7,7 +7,9 @@ font-size: 18px;
 width: 150px;
 height: 50px;
 padding: 4%;
-
+display: flex;
+justify-content: center;
+align-item:center;
 box-shadow: rgba(0, 0, 0, 0.20) 0px 5px 15px;
 background-color: #E9E9E9;
 border:none;
