@@ -13,9 +13,9 @@ import { ColumnStyle } from "../Style/ColumnStyle";
 import { CheckStyled } from "../Style/CheckStyled";
 
 export default function Oxygen(props) {
-  const [valueA, setValueA] = useState();
-  const [valueB, setValueB] = useState();
-  const [valueC, setValueC] = useState();
+  const [valueA, setValueA] = useState('');
+  const [valueB, setValueB] = useState('');
+  const [valueC, setValueC] = useState('');
 
   const [newValueA, setNewValueA] = useState();
   const [newValueB, setNewValueB] = useState();

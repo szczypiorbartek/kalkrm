@@ -15,6 +15,7 @@ export default function Wrapper(props) {
 
   const [visibleAdrenalina, setVisibleAdrenalina] = useState(false);
   const [visibleOxygen, setVisibleOxygen] = useState(false);
+  const [visibleChildDrug, setVisibleChildDrug] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false)
 
   const Home = () => {
@@ -22,6 +23,7 @@ export default function Wrapper(props) {
     setVisibleAdrenalina(false);
     setVisibleOxygen(false);
     setContentVisible(false)
+    setVisibleChildDrug(false)
     setTitle("Co Liczymy ?");
     setMenuOpen(false)
   };
@@ -30,12 +32,18 @@ export default function Wrapper(props) {
     setVisibleAdrenalina(!visibleAdrenalina);
     setTitle("Adrenalina w pompie");
     setVisiblePanel(!visiblePanel);
-    e.prventDefault();
+    
 
   };
   const OxygenOpen = () => {
     setVisibleOxygen(!visibleOxygen);
     setTitle("Ilość tlenu");
+    setVisiblePanel(!visiblePanel);
+  };
+
+  const ChildDrugOpen = () => {
+    setVisibleChildDrug(!visibleChildDrug)
+    setTitle("Leki dla dzieci");
     setVisiblePanel(!visiblePanel);
   };
 
@@ -53,11 +61,12 @@ export default function Wrapper(props) {
     <StyledWrapper>
 
       {visiblePanel ? (
-        <Panel openAdrenalina={AdrenalinaOpen} openOxygen={OxygenOpen} />
+        <Panel openAdrenalina={AdrenalinaOpen} openOxygen={OxygenOpen} openChildDrug={ChildDrugOpen} />
       ) : (
         <Modal
           visibleAdrenalina={visibleAdrenalina}
           visibleOxygen={visibleOxygen}
+          visibleChildDrug={visibleChildDrug}
           contentVisible={contentVisble}
         />
       )}

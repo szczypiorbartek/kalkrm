@@ -3,6 +3,7 @@ import Adrenalina from "./Adrenalina";
 import Oxygen from "./Oxygen";
 
 import { StyledModal } from "../Style/StyledModal";
+import ChildDrugs from "./ChildDrugs";
 
 const Modal = (props) =>{
 const visibleAdrenalina = useState(props.visibleAdrenalina)
@@ -14,6 +15,9 @@ const visibleAdrenalina = useState(props.visibleAdrenalina)
        }
          {
            props.visibleOxygen ? <Oxygen content={props.contentVisible}/> : ''
+       }
+       {
+           props.visibleChildDrug ? <ChildDrugs content={props.contentVisible}/> : ''
        }
        
    </StyledModal>

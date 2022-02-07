@@ -25,8 +25,8 @@ export default function Adrenalina(props) {
   const [brady, setBardy] = useState(0);
   const [shock, setShock] = useState(0);
 
-  const [weightValue, setWeightValue] = useState();
-  const [doseValue, setDoseValue] = useState();
+  const [weightValue, setWeightValue] = useState('');
+  const [doseValue, setDoseValue] = useState('');
   const [visibleAlert, setVisibleAlert] = useState(false);
 
   const changeVisibleTimer = () => {
