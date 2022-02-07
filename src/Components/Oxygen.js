@@ -161,11 +161,13 @@ export default function Oxygen(props) {
           
           <StyledInput
             xsmall
+            type="number"
             value={valueD}
             placeholder="ilość oddechów"
             onChange={(e) => setValueD(e.target.value)}
           />
           <StyledInput
+          type="number"
             xsmall
             value={valueE}
             placeholder="objętość"

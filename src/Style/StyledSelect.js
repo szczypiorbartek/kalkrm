@@ -12,7 +12,6 @@ margin-right:10px;
 @media (min-width:450px) {
      width: 10px;
      height: 10px;
-     background-color: black ;
     
     }
 
