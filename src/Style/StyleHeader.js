@@ -48,14 +48,20 @@ export const StyledHeader = styled.div`
   props.hide &&
   css`
   width:20px;
-height: 100px;
+height: 70px;
+padding: 10px 10px;
 transform: translateX(0);
 background-color:black ;
 top: 50vh;
 border-top-right-radius:10px;
 border-bottom-right-radius:10px;
 animation: none;
-
+justify-content:center;
+align-item:center;
+ svg{
+   width: 10px;
+   height: 10px;
+ }
  
  
 
