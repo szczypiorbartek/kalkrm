@@ -4,9 +4,9 @@ import styled,{css} from "styled-components";
 export const StyledButton= styled.button`
 margin-top: 3vh;
 font-size: 12px;
-width: 170px;
+
 height: 50px;
-padding: 5%;
+
 box-shadow: rgba(0, 0, 0, 0.20) 0px 5px 15px;
 background-color: #E9E9E9;
 border:none;
