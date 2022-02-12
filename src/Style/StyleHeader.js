@@ -47,8 +47,8 @@ export const StyledHeader = styled.div`
   ${props =>
   props.hide &&
   css`
-  width:20px;
-height: 70px;
+  width:30px;
+height: 90px;
 padding: 10px 10px;
 transform: translateX(0);
 background-color:black ;

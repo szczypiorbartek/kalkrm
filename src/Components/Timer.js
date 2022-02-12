@@ -8,7 +8,7 @@ import { StyledContent } from "../Style/StyledContent";
 export default function Timer({ activeA, newValueA, newValueB, unvisible }) {
   return (
     <StyledTimer>
-      <h2>Tlenu starczy na:</h2>
+      <h2>Tlenu wystarczy na:</h2>
 
       {activeA ? (
         <h1>{newValueA.toFixed(0)} min</h1>

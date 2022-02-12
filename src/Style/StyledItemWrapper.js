@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled,{css} from "styled-components";
 
 export const StyledItemWrapper = styled.div`
   position: relative;
@@ -26,7 +26,12 @@ export const StyledItemWrapper = styled.div`
 
     
   }
-
+  ${props =>
+    props.drugs &&
+    css`
+     height: auto;
+      color: white;
+    `};
   @media (min-width: 450px) {
     
     h1 {

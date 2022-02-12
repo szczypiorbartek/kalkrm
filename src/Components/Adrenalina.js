@@ -163,7 +163,7 @@ export default function Adrenalina(props) {
          {bradyActive ? (
            <StyledContent>
              <h1>
-               1 amp adrenaliny rozcieńczyć w {squirrel.a} ml 0.9% NaCl.
+               1 mg adrenaliny rozcieńczyć w {squirrel.a} ml 0.9% NaCl.
                Ustawić na pompie infuzyjnej przepływ na {brady} ml/h
              </h1>
            <StyledButton close onClick={getValue}>zamknij</StyledButton>
@@ -172,7 +172,7 @@ export default function Adrenalina(props) {
          ) : (
            <StyledContent>
              <h1>
-               1 amp adrenaliny rozcieńczyć w {squirrel.a} ml 0.9% NaCl.
+               1 mg adrenaliny rozcieńczyć w {squirrel.a} ml 0.9% NaCl.
                Ustawić na pompie przepływ na {shock} ml/h
              </h1>
              <StyledButton close onClick={getValue}>zamknij</StyledButton>
