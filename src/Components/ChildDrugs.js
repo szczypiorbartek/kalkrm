@@ -16,6 +16,7 @@ export default function ChildDrugs() {
   const [atropinaOpen, setAtropinaOpen] = useState(false);
   const [amiodaronOpen, setAmiodaronOpen] = useState(false);
   const [adenozynaOpen, setAdenozynaOpen] = useState(false)
+  const [hydrocortyzonOpen, setHydrocortyzonOpen] =useState(false)
 
   const [weighValue, setWeightValue] = useState('');
   const [ageValue, setAgeValue] = useState('')
@@ -54,6 +55,9 @@ export default function ChildDrugs() {
   };
   const openAdenozyna = () => {
     setAdenozynaOpen(true);
+  };
+  const openHydrocortyzon = () => {
+    setHydrocortyzonOpen(true);
   };
   const changeAdrenalinaA = () => {
     setAdrenalinaA(true);
@@ -149,7 +153,7 @@ export default function ChildDrugs() {
               <StyledButton onClick={changeAdrenalinaD}>Astma</StyledButton>
             )}
           </ButtonAreaStyled>
-{ weighValue || ageValue >0 ?
+{ weighValue ||ageValue >0 && ageValue<18 ?
           <StyledDrugArea>
             {adrenalinaA ? (
               <>
@@ -197,10 +201,10 @@ export default function ChildDrugs() {
             ) : (
               " "
             )}
-          </StyledDrugArea> : <h1>Wpisz wagę albo wiek diecka</h1>
+          </StyledDrugArea> : <h1>{ageValue>=18 ?"Osoba dorosła" :"Wpisz wagę albo wiek diecka "} </h1>
 }
           <StyledButton close onClick={() => setAdrenalinaOpen(false)}>
-            Close
+            Zamknij
           </StyledButton>
         </StyledDrugItem>
       ) : (
@@ -212,14 +216,14 @@ export default function ChildDrugs() {
       </StyledDrugItem>
       {atropinaOpen ? (
         <StyledDrugItem full>
-          { weighValue || ageValue >0 ?
+          { weighValue ||  ageValue >0 && ageValue<18?
             <StyledDrugArea>
                 <h1>Atropina w bradykardi</h1>
                 <p>Dawka: {weightMode ? (weighValue*0.02)<=0.1 ? 0.1 : weighValue*0.02 :(final*0.02)<=0.1 ? 0.1 :(final*0.02) } mg</p>
                 <p>2 mg atropiny rozcieńcz w 10 mg 0.9% NaCl podaj {weightMode? weighValue*0.02<=0.1 ?   0.5: weighValue/10 : final*0.02<=0.1 ? 0.5: final/10} ml</p>
-            </StyledDrugArea> : <h1>Wpisz wagę albo wiek diecka</h1>}
+            </StyledDrugArea> :<h1>{ageValue>=18 ?"Osoba dorosła" :"Wpisz wagę albo wiek diecka "} </h1>}
           <StyledButton close onClick={() => setAtropinaOpen(false)}>
-            Close
+            Zamknij
           </StyledButton>
         </StyledDrugItem>
       ) : (
@@ -230,14 +234,14 @@ export default function ChildDrugs() {
       </StyledDrugItem>
       {amiodaronOpen ? (
         <StyledDrugItem full>
-            { weighValue || ageValue >0 ?
+            { weighValue>0 || ageValue >0 && ageValue<18 ?
             <StyledDrugArea>
                 <h1>Amiodaron</h1>
                 <p>Dawka: {weightMode ? weighValue*5: final*5} mg. </p>
                 <p>Rozcieńcz {weightMode? weighValue <=20 ? 100 : 200 : final<=20 ? 100 :200}mg w 20 ml 5% glukozie i podaj {weightMode ? weighValue <=20? weighValue :weighValue/2: final<=20?final : final/2} ml iv/io.</p>
-            </StyledDrugArea> : <h1>Wpisz wagę albo wiek diecka</h1>}
+            </StyledDrugArea> :<h1>{ageValue>=18 ?"Osoba dorosła" :"Wpisz wagę albo wiek diecka "} </h1>}
           <StyledButton close onClick={() => setAmiodaronOpen(false)}>
-            Close
+          Zamknij
           </StyledButton>
         </StyledDrugItem>
       ) : (
@@ -246,18 +250,33 @@ export default function ChildDrugs() {
       <StyledDrugItem green onClick={openAdenozyna}>Adenozyna</StyledDrugItem>
      { adenozynaOpen ?
       <StyledDrugItem full>
-         { weighValue || ageValue >0 ?
+         { weighValue || ageValue >0 && ageValue <18  ?
             <StyledDrugArea>
                 <h1>Adenozyna</h1>
-                <p>I Dawka: {weightMode ? weighValue*0.1<=6 ? weighValue*0.1 : 6 : final*0.1<=6 ? (final*0.1).toFixed() : 6} mg. iv </p>
-                <p>II Dawka: {weightMode ? weighValue*0.2<=12 ? weighValue*0.2 : 12 : final*0.1<=12 ? (final*0.2).toFixed() : 12} mg. iv </p>
-            </StyledDrugArea> : <h1>Wpisz wagę albo wiek diecka</h1>}
+                <p>I Dawka: {weightMode ? weighValue*0.1<=6 ? (weighValue*0.1).toFixed() : 6 : final*0.1<=6 ? (final*0.1).toFixed() : 6} mg. iv </p>
+                <p>II Dawka: {weightMode ? weighValue*0.2<=12 ? (weighValue*0.2).toFixed() : 12 : final*0.1<=12 ? (final*0.2).toFixed() : 12} mg. iv </p>
+            </StyledDrugArea> :<h1>{ageValue>=18 ?"Osoba dorosła" :"Wpisz wagę albo wiek diecka "} </h1>}
           <StyledButton close onClick={() => setAdenozynaOpen(false)}>
-            Close
+            Zamknij
           </StyledButton>
         </StyledDrugItem>: ''}
-      <StyledDrugItem grey>Dexaven</StyledDrugItem>
-      <StyledDrugItem purple>Hydrokortyzon</StyledDrugItem>
+
+      {/* <StyledDrugItem grey>Dexaven</StyledDrugItem> */}
+
+      <StyledDrugItem purple onClick={openHydrocortyzon}>Hydrokortyzon</StyledDrugItem>
+      { hydrocortyzonOpen ?
+      <StyledDrugItem full>
+         { weighValue || ageValue >0 && ageValue <18  ?
+            <StyledDrugArea>
+                <h1>Hydrocortyzon</h1>
+                <p>Dawka: {weightMode ? weighValue>20 ? 100 : weighValue*5: final>20?100: final*5} mg</p>
+                <p>Rozcieńcz 100 mg w 20 ml 0.9% NaCl i podaj {weightMode ? weighValue >20? 100 :weighValue: final> 2?100 : final} ml iv/io.</p>
+            </StyledDrugArea> :<h1>{ageValue>=18 ?"Osoba dorosła" :"Wpisz wagę albo wiek diecka "} </h1>}
+          <StyledButton close onClick={() => setHydrocortyzonOpen(false)}>
+            Zamknij
+          </StyledButton>
+        </StyledDrugItem>: ''}
+
       <StyledDrugItem pink>Morfina</StyledDrugItem>
       <StyledDrugItem electricBlue>Fentanyl</StyledDrugItem>
       <StyledDrugItem olive>Ketamina</StyledDrugItem>
