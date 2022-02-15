@@ -15,6 +15,7 @@ export default function ChildDrugs() {
   const [adrenalinaOpen, setAdrenalinaOpen] = useState(false);
   const [atropinaOpen, setAtropinaOpen] = useState(false);
   const [amiodaronOpen, setAmiodaronOpen] = useState(false);
+  const [adenozynaOpen, setAdenozynaOpen] = useState(false)
 
   const [weighValue, setWeightValue] = useState('');
   const [ageValue, setAgeValue] = useState('')
@@ -50,6 +51,9 @@ export default function ChildDrugs() {
   };
   const openAmiodaron = () => {
     setAmiodaronOpen(true);
+  };
+  const openAdenozyna = () => {
+    setAdenozynaOpen(true);
   };
   const changeAdrenalinaA = () => {
     setAdrenalinaA(true);
@@ -103,7 +107,7 @@ export default function ChildDrugs() {
           onChange={(e) => setWeightValue(e.target.value)}
         />
       ) : (
-        <StyledInput type="number" value={ageValue} placeholder="wiek dziecka w latach" onChange={(e) => setAgeValue(e.target.value)} />
+        <StyledInput min="0" max="18" type="number" value={ageValue} placeholder="wiek dziecka w latach" onChange={(e) => setAgeValue(e.target.value)} />
       )}
 
       <StyledDrugItem yellow onClick={openAdrenalina}>
@@ -202,16 +206,18 @@ export default function ChildDrugs() {
       ) : (
         ""
       )}
+      
       <StyledDrugItem blue onClick={openAtropina}>
         Atropina
       </StyledDrugItem>
       {atropinaOpen ? (
         <StyledDrugItem full>
+          { weighValue || ageValue >0 ?
             <StyledDrugArea>
                 <h1>Atropina w bradykardi</h1>
-                <p>Dawka: {weightMode ? (weighValue*0.02)<=0.1 ? 0.1 :(final*0.02) : (final*0.02)<=0.1 ? 0.1 :(final*0.02) } mg</p>
-                <p>2 mg atropiny rozcieńcz w 10 mg 0.9% NaCl podaj {weightMode? weighValue/10 : final/10} ml</p>
-            </StyledDrugArea>
+                <p>Dawka: {weightMode ? (weighValue*0.02)<=0.1 ? 0.1 : weighValue*0.02 :(final*0.02)<=0.1 ? 0.1 :(final*0.02) } mg</p>
+                <p>2 mg atropiny rozcieńcz w 10 mg 0.9% NaCl podaj {weightMode? weighValue*0.02<=0.1 ?   0.5: weighValue/10 : final*0.02<=0.1 ? 0.5: final/10} ml</p>
+            </StyledDrugArea> : <h1>Wpisz wagę albo wiek diecka</h1>}
           <StyledButton close onClick={() => setAtropinaOpen(false)}>
             Close
           </StyledButton>
@@ -224,11 +230,12 @@ export default function ChildDrugs() {
       </StyledDrugItem>
       {amiodaronOpen ? (
         <StyledDrugItem full>
+            { weighValue || ageValue >0 ?
             <StyledDrugArea>
                 <h1>Amiodaron</h1>
                 <p>Dawka: {weightMode ? weighValue*5: final*5} mg. </p>
-                <p>Rozcieńcz 100mg w 5% glukozie i podaj {weightMode ? weighValue: final} ml iv/io.</p>
-            </StyledDrugArea>
+                <p>Rozcieńcz {weightMode? weighValue <=20 ? 100 : 200 : final<=20 ? 100 :200}mg w 20 ml 5% glukozie i podaj {weightMode ? weighValue <=20? weighValue :weighValue/2: final<=20?final : final/2} ml iv/io.</p>
+            </StyledDrugArea> : <h1>Wpisz wagę albo wiek diecka</h1>}
           <StyledButton close onClick={() => setAmiodaronOpen(false)}>
             Close
           </StyledButton>
@@ -236,7 +243,19 @@ export default function ChildDrugs() {
       ) : (
         ""
       )}
-      <StyledDrugItem green>Adenozyna</StyledDrugItem>
+      <StyledDrugItem green onClick={openAdenozyna}>Adenozyna</StyledDrugItem>
+     { adenozynaOpen ?
+      <StyledDrugItem full>
+         { weighValue || ageValue >0 ?
+            <StyledDrugArea>
+                <h1>Adenozyna</h1>
+                <p>I Dawka: {weightMode ? weighValue*0.1<=6 ? weighValue*0.1 : 6 : final*0.1<=6 ? (final*0.1).toFixed() : 6} mg. iv </p>
+                <p>II Dawka: {weightMode ? weighValue*0.2<=12 ? weighValue*0.2 : 12 : final*0.1<=12 ? (final*0.2).toFixed() : 12} mg. iv </p>
+            </StyledDrugArea> : <h1>Wpisz wagę albo wiek diecka</h1>}
+          <StyledButton close onClick={() => setAdenozynaOpen(false)}>
+            Close
+          </StyledButton>
+        </StyledDrugItem>: ''}
       <StyledDrugItem grey>Dexaven</StyledDrugItem>
       <StyledDrugItem purple>Hydrokortyzon</StyledDrugItem>
       <StyledDrugItem pink>Morfina</StyledDrugItem>
