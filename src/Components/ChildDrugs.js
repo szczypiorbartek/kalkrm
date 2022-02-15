@@ -107,7 +107,7 @@ export default function ChildDrugs() {
           onChange={(e) => setWeightValue(e.target.value)}
         />
       ) : (
-        <StyledInput min="0" max="18" type="number" value={ageValue} placeholder="wiek dziecka w latach" onChange={(e) => setAgeValue(e.target.value)} />
+        <StyledInput  type="number" value={ageValue} placeholder="wiek dziecka w latach" onChange={(e) => setAgeValue(e.target.value)} />
       )}
 
       <StyledDrugItem yellow onClick={openAdrenalina}>
