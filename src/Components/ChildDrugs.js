@@ -205,7 +205,7 @@ export default function ChildDrugs() {
               <>
                 <h1>Astma</h1>
                 <p>
-                  Dawka {weightMode ?  weighValue*0.01>0.5 ? 0.5 : weighValue*0.01: final*0.01>0.5 ? 0.5 : final*0.1 } mg sc. Można powtórzyć po 20 min.
+                  Dawka {weightMode ? weighValue*0.01>0.5 ? 0.5 : weighValue*0.01: final*0.01>0.5 ? 0.5 : final*0.01 } mg sc. Można powtórzyć po 20 min.
                   
                 </p>
               </>
