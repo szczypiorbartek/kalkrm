@@ -253,8 +253,8 @@ export default function ChildDrugs() {
          { weighValue || ageValue >0 && ageValue <18  ?
             <StyledDrugArea>
                 <h1>Adenozyna</h1>
-                <p>I Dawka: {weightMode ? weighValue*0.1<=6 ? (weighValue*0.1).toFixed() : 6 : final*0.1<=6 ? (final*0.1).toFixed() : 6} mg. iv </p>
-                <p>II Dawka: {weightMode ? weighValue*0.2<=12 ? (weighValue*0.2).toFixed() : 12 : final*0.1<=12 ? (final*0.2).toFixed() : 12} mg. iv </p>
+                <p>I Dawka: {weightMode ? weighValue*0.1<=6 ? (weighValue*0.1).toFixed(1) : 6 : final*0.1<=6 ? (final*0.1).toFixed() : 6} mg. iv </p>
+                <p>II Dawka: {weightMode ? weighValue*0.2<=12 ? (weighValue*0.2).toFixed(1) : 12 : final*0.1<=12 ? (final*0.2).toFixed() : 12} mg. iv </p>
             </StyledDrugArea> :<h1>{ageValue>=18 ?"Osoba dorosła" :"Wpisz wagę albo wiek diecka "} </h1>}
           <StyledButton close onClick={() => setAdenozynaOpen(false)}>
             Zamknij
