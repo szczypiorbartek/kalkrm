@@ -26,7 +26,9 @@ img{
   max-height: 60px;
   margin-bottom: 15px;
 }
-
+p{
+  font-size:0.8em;
+}
 
 
 
