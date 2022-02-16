@@ -15,8 +15,11 @@ export default function ChildDrugs() {
   const [adrenalinaOpen, setAdrenalinaOpen] = useState(false);
   const [atropinaOpen, setAtropinaOpen] = useState(false);
   const [amiodaronOpen, setAmiodaronOpen] = useState(false);
-  const [adenozynaOpen, setAdenozynaOpen] = useState(false)
-  const [hydrocortyzonOpen, setHydrocortyzonOpen] =useState(false)
+  const [adenozynaOpen, setAdenozynaOpen] = useState(false);
+  const [hydrocortyzonOpen, setHydrocortyzonOpen] =useState(false);
+  const [morfinaOpen, setMorfinaOpen] =useState(false)
+  const [fentanylOpen, setFentanylOpen] =useState(false)
+
 
   const [weighValue, setWeightValue] = useState('');
   const [ageValue, setAgeValue] = useState('')
@@ -58,6 +61,14 @@ export default function ChildDrugs() {
   };
   const openHydrocortyzon = () => {
     setHydrocortyzonOpen(true);
+  };
+
+  const openMorfina = () => {
+    setMorfinaOpen(true);
+  };
+
+  const openFentanyl = () => {
+    setFentanylOpen(true);
   };
   const changeAdrenalinaA = () => {
     setAdrenalinaA(true);
@@ -171,7 +182,7 @@ export default function ChildDrugs() {
               <>
                 <h1>Anafilaksja</h1>
                 {ageMode ? <p>
-                 Dawka: {ageValue<=6 ? 150 : ageValue>6 && ageValue<12 ? 300 : 500} mcg
+                 Dawka: {ageValue<=6 ? 150 : ageValue>6 && ageValue<12 ? 300 : 500} mcg im/iv
                 </p>:<p>Podaj wiek dziecka by wyliczyć dawkę</p>}
               </>
             ) : (
@@ -194,7 +205,7 @@ export default function ChildDrugs() {
               <>
                 <h1>Astma</h1>
                 <p>
-                  Dawka {weightMode ?  weighValue*0.01>0.5 ? 0.5 : weighValue*0.01: final*0.01>0.5 ? 0.5 : final*0.1 } mg im. Można powtórzyć po 20 min.
+                  Dawka {weightMode ?  weighValue*0.01>0.5 ? 0.5 : weighValue*0.01: final*0.01>0.5 ? 0.5 : final*0.1 } mg sc. Można powtórzyć po 20 min.
                   
                 </p>
               </>
@@ -218,7 +229,7 @@ export default function ChildDrugs() {
         <StyledDrugItem full>
           { weighValue ||  ageValue >0 && ageValue<18?
             <StyledDrugArea>
-                <h1>Atropina w bradykardi</h1>
+                <h1>Atropina w bradykardii</h1>
                 <p>Dawka: {weightMode ? (weighValue*0.02)<=0.1 ? 0.1 :  weighValue*0.02 > 0.5 ? 0.5 :  weighValue*0.02: (final*0.02)<=0.1 ? 0.1 : (final*0.02)>0.5 ? 0.5 : final*0.02} mg</p>
                 <p>2 mg atropiny rozcieńcz w 10 ml 0.9% NaCl podaj {weightMode? weighValue*0.02<=0.1 ?   0.5: weighValue*0.02>0.5? 2.5: weighValue/10 : final*0.02<=0.1 ? 0.5: final*0.02>0.5 ? 2.5: final/10} ml</p>
             </StyledDrugArea> :<h1>{ageValue>=18 ?"Osoba dorosła" :"Wpisz wagę albo wiek diecka "} </h1>}
@@ -277,8 +288,35 @@ export default function ChildDrugs() {
           </StyledButton>
         </StyledDrugItem>: ''}
 
-      <StyledDrugItem pink>Morfina</StyledDrugItem>
-      <StyledDrugItem electricBlue>Fentanyl</StyledDrugItem>
+      <StyledDrugItem pink onClick={openMorfina}>Morfina</StyledDrugItem>
+      { morfinaOpen ?
+      <StyledDrugItem full>
+         { weighValue || ageValue >0 && ageValue <18  ?
+            <StyledDrugArea>
+                <h1>Morfina</h1>
+                <p>Dawka: {weightMode ? weighValue*0.1: final*0.1} mg iv/io</p>
+               
+            </StyledDrugArea> :<h1>{ageValue>=18 ?"Osoba dorosła" :"Wpisz wagę albo wiek diecka "} </h1>}
+          <StyledButton close onClick={() => setMorfinaOpen(false)}>
+            Zamknij
+          </StyledButton>
+        </StyledDrugItem>: ''}
+
+      <StyledDrugItem electricBlue onClick={openFentanyl}>Fentanyl</StyledDrugItem>
+
+      { fentanylOpen ?
+      <StyledDrugItem full>
+         { weighValue || ageValue >0 && ageValue <18  ?
+            <StyledDrugArea>
+                <h1>Fentanyl</h1>
+                <p>Dawka: {weightMode ? weighValue*1: final*1} -  {weightMode ? weighValue*3: final*3} mcg iv/io</p>
+               
+            </StyledDrugArea> :<h1>{ageValue>=18 ?"Osoba dorosła" :"Wpisz wagę albo wiek diecka "} </h1>}
+          <StyledButton close onClick={() => setFentanylOpen(false)}>
+            Zamknij
+          </StyledButton>
+        </StyledDrugItem>: ''}
+
       <StyledDrugItem olive>Ketamina</StyledDrugItem>
       <StyledDrugItem forest>Midanium</StyledDrugItem>
     </StyledItemWrapper>
