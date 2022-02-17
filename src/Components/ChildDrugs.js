@@ -19,7 +19,8 @@ export default function ChildDrugs() {
   const [hydrocortyzonOpen, setHydrocortyzonOpen] =useState(false);
   const [morfinaOpen, setMorfinaOpen] =useState(false);
   const [fentanylOpen, setFentanylOpen] =useState(false);
-  const [ketaminaOpen, setKetaminaOpen] =useState(false)
+  const [ketaminaOpen, setKetaminaOpen] =useState(false);
+  const [relaniumOpen, setRelaniumOpen] =useState(false);
 
 
   const [weighValue, setWeightValue] = useState('');
@@ -73,6 +74,9 @@ export default function ChildDrugs() {
 
   const openFentanyl = () => {
     setFentanylOpen(true);
+  };
+  const openRelanium = () => {
+    setRelaniumOpen(true);
   };
   const changeAdrenalinaA = () => {
     setAdrenalinaA(true);
@@ -173,10 +177,10 @@ export default function ChildDrugs() {
             {adrenalinaA ? (
               <>
                 <h1>Zatrzymanie krążenia</h1>
-                <p>Dawka: {weightMode ? (weighValue * 0.01) :  final*0.01} mg</p>
+                <p>Dawka: {weightMode ? (weighValue * 0.01).toFixed(2) :  (final*0.01).toFixed(2)} mg</p>
                 <p>
                   1 mg Adrenaliny rozcieńcz w 10 ml 0.9% NaCl. Podaj{" "}
-                  {weightMode? (weighValue / 10) : final/10 } ml roztworu iv/io
+                  {weightMode? (weighValue/10) : final/10 } ml roztworu iv/io
                 </p>
               </>
             ) : (
@@ -209,7 +213,7 @@ export default function ChildDrugs() {
               <>
                 <h1>Astma</h1>
                 <p>
-                  Dawka {weightMode ? weighValue*0.01>0.5 ? 0.5 : weighValue*0.01: final*0.01>0.5 ? 0.5 : final*0.01 } mg sc. Można powtórzyć po 20 min.
+                  Dawka {weightMode ? weighValue*0.01>0.5 ? 0.5 :( weighValue*0.01).toFixed(2): final*0.01>0.5 ? 0.5 : (final*0.01).toFixed(2)} mg sc. Można powtórzyć po 20 min.
                   
                 </p>
               </>
@@ -338,7 +342,20 @@ export default function ChildDrugs() {
         </StyledDrugItem>: ''}
 
      
-      <StyledDrugItem forest>Midanium</StyledDrugItem>
+      <StyledDrugItem forest onClick={openRelanium}>Relanium</StyledDrugItem>
+      { relaniumOpen ?
+      <StyledDrugItem full>
+         { weighValue || ageValue >0 && ageValue <18  ?
+            <StyledDrugArea>
+                <h1>Relanium</h1>
+                <p>Dawka iv/io: {weightMode ? (weighValue*0.1).toFixed(2):(final*0.1).toFixed(2)} - {weightMode ? (weighValue*0.3).toFixed(2):(final*0.3).toFixed(2)} mcg iv/io</p>
+                <p>Wlewka: {weightMode ? weighValue<=10 ? ( weighValue*0.5).toFixed(2): weighValue>15 ? 10 : 5: final<=10 ? ( final*0.5).toFixed(2): final>15 ? 10 : 5} mg pr</p>
+               
+            </StyledDrugArea> :<h1>{ageValue>=18 ?"Osoba dorosła" :"Wpisz wagę albo wiek diecka "} </h1>}
+          <StyledButton close onClick={() => setRelaniumOpen(false)}>
+            Zamknij
+          </StyledButton>
+        </StyledDrugItem>: ''}
     </StyledItemWrapper>
   );
 }
