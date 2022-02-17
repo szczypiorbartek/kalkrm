@@ -348,7 +348,7 @@ export default function ChildDrugs() {
          { weighValue || ageValue >0 && ageValue <18  ?
             <StyledDrugArea>
                 <h1>Relanium</h1>
-                <p>Dawka iv/io: {weightMode ? (weighValue*0.1).toFixed(2):(final*0.1).toFixed(2)} - {weightMode ? (weighValue*0.3).toFixed(2):(final*0.3).toFixed(2)} mcg iv/io</p>
+                <p>Dawka iv/io: {weightMode ? (weighValue*0.1).toFixed(2):(final*0.1).toFixed(2)} - {weightMode ? (weighValue*0.3).toFixed(2):(final*0.3).toFixed(2)} mg iv/io</p>
                 <p>Wlewka: {weightMode ? weighValue<=10 ? ( weighValue*0.5).toFixed(2): weighValue>15 ? 10 : 5: final<=10 ? ( final*0.5).toFixed(2): final>15 ? 10 : 5} mg pr</p>
                
             </StyledDrugArea> :<h1>{ageValue>=18 ?"Osoba dorosła" :"Wpisz wagę albo wiek diecka "} </h1>}
