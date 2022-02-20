@@ -5,7 +5,7 @@ export const StyledPanelItem = styled.div`
 position: relative;
 background-color:#D7F9FF;
 min-width: 150px;
-max-width: 300px;
+max-width: 200px;
 width: 40%;
 height: auto;
 border-radius: 10%;

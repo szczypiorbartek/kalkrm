@@ -7,7 +7,7 @@ import React from "react";
  width:100%;
  min-height: 100vh;
 
- background-color:#7899D4;
+ background: linear-gradient(#3957ED, #7EC9F5);
  display: flex;
  justify-content: center;
  align-items: center;

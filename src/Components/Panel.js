@@ -21,6 +21,7 @@ export default function Panel(props) {
       <PanelItem icon={child} name={"Dawki dla dzieci"} open={props.openChildDrug} />
       <PanelItem icon={fire} name={"Oparzenia"} />
       <PanelItem icon={nose} name={"Leki donosowo"} />
+      
     </StyledPanel>
   );
 }
