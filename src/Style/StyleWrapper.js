@@ -2,15 +2,14 @@ import React from "react";
  import styled from "styled-components";
 
  export const StyledWrapper = styled.div`
- position:relative;
-
- width:100%;
- min-height: 100vh;
-
- background: linear-gradient(#3957ED, #7EC9F5);
- display: flex;
- justify-content: center;
- align-items: center;
+width: 100%;
+height: 100vh;
+max-width: 1000px;
+margin: 0 auto;
+display: flex;
+flex-direction: column;
+background-color: ${(props)=>props.theme.colors.powderWhite};
+overflow-x: hidden;
  label {
     position: relative;
     width: 95%;

@@ -2,32 +2,40 @@ import React from "react";
 import styled from "styled-components";
 export const StyledPanelItem = styled.div`
 
-position: relative;
-background-color:#D7F9FF;
-min-width: 150px;
-max-width: 200px;
-width: 40%;
-height: auto;
-border-radius: 10%;
-box-shadow: rgba(0, 0, 0, 0.50) 0px 5px 20px;
-display:flex;
-justify-content: space-around;
-align-items: center;
-text-align: center;
+border-radius: 25px;
+padding: 10px;
+display: flex;
 flex-direction: column;
-padding-top: 5vh;
-padding-bottom: 5vh;
-
-
-
-margin: 15px;
-img{
-  max-width: 60px;
-  max-height: 60px;
-  margin-bottom: 15px;
-}
+align-items: center;
+justify-content: space-around;
+&:nth-last-of-type(1){
+  background-color: ${(props)=>props.theme.colors.red};
+  grid-column-start: 1;
+  grid-column-end: 3;
+  
+} 
+&:nth-last-of-type(2){
+  background-color: ${(props)=>props.theme.colors.violet};
+  
+} 
+&:nth-last-of-type(3){
+  background-color: ${(props)=>props.theme.colors.orange};
+  
+} 
+&:nth-last-of-type(4){
+  background-color: ${(props)=>props.theme.colors.lightBlue};
+  
+} 
+&:nth-last-of-type(5){
+  background-color: ${(props)=>props.theme.colors.darkGreen};
+  
+} 
 p{
-  font-size:0.8em;
+  font-size: ${(props)=>props.theme.fontSizes.small};
+color:${(props) =>props.theme.colors.powderWhite};
+font-size: ${(props)=>props.theme.fontSizes.xsmall};
+text-transform: uppercase;
+margin-top: 15px;
 }
 
 
