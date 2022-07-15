@@ -6,7 +6,8 @@ export const ButtonAreaStyled = styled.div`
 width:95%;
 max-width: 320px;
 position: relative;
-margin-bottom: 2vh;
+margin-top: 35px;
+margin-bottom: 15px;
 justify-content: center;
 display: grid;
 grid-template-columns: 1fr 1fr;

@@ -20,7 +20,7 @@ width: 100%;
 top:10%;
 z-index: 0;
 
-padding:70px 30px;
+padding:0px 20px;
 display: grid;
 grid-gap: 10px;
 grid-template-columns: repeat(2, 1fr);

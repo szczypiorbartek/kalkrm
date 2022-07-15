@@ -3,7 +3,7 @@ import styled,{css} from "styled-components";
 
 export const StyledItemWrapper = styled.div`
   position: relative;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   background-color: #FDFFFC;
   display: flex;
@@ -14,7 +14,7 @@ export const StyledItemWrapper = styled.div`
   }
   p {
     font-size: 1em;
-    margin: 35px 0;
+    margin: 10% 0;
   }
   label {
     position: relative;

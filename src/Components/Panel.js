@@ -10,6 +10,7 @@ import dopamina from "../Assets/dopamina.svg"
 
 export default function Panel(props) {
   return (
+    
     <StyledPanel>
       <PanelItem
         open={props.openAdrenalina}

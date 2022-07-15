@@ -3,7 +3,9 @@ import styled,{css} from "styled-components";
 
 export const StyledInput = styled.input`
 
-margin: 20px;
+width: 100%;
+
+
 font-size: 20px;
 padding: 4%;
 text-align: center;
@@ -18,7 +20,6 @@ ${props =>
     props.small &&
     css`
     width: 70vw;
-    
     font-size: 20px;
     padding: 3%;
     @media (min-width:450px) {
@@ -49,7 +50,7 @@ ${props =>
     font-size: 15px;
     padding: 2%;
 
-
+    }
    
 `
 

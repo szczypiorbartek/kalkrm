@@ -43,16 +43,18 @@ export const StyledHeader = styled.div`
     transform: translateX(0px);
   }
 }
-  }
+  
   ${props =>
   props.hide &&
   css`
-  width:30px;
-height: 90px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width:40px;
+height: 50px;
 padding: 10px 10px;
 transform: translateX(0);
 background-color:black ;
-top: 50vh;
 border-top-right-radius:10px;
 border-bottom-right-radius:10px;
 animation: none;

@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const StyledPanelItem = styled.div`
 
 border-radius: 25px;
-padding: 10px;
+padding: 15px 5px;
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -35,6 +35,7 @@ p{
 color:${(props) =>props.theme.colors.powderWhite};
 font-size: ${(props)=>props.theme.fontSizes.xsmall};
 text-transform: uppercase;
+text-align: center;
 margin-top: 15px;
 }
 

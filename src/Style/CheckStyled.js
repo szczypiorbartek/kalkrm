@@ -2,10 +2,9 @@ import React from "react";
 import styled from "styled-components";
 
 export const CheckStyled = styled.div`
-  position: relative;
   width: 100vw;
   height: 5vh;
-margin: 30px 0px;
+margin: 70px 0px;
   display: flex;
   
   justify-content: center;
