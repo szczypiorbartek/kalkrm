@@ -7,7 +7,7 @@ width: 100%;
 
 
 font-size: 20px;
-padding: 4%;
+padding: 3%;
 text-align: center;
 outline: none;
 border:none;
