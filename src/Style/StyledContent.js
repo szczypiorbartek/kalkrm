@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 export const StyledContent = styled.div`
 position: fixed;
+z-index: 2;
 width: 100%;
 height: 100vh;
 display: flex;
@@ -10,7 +11,7 @@ justify-content: center;
 align-items: center;
 flex-direction: column;
 background-color: #F2F2F2;
-border-radius: 20px;
+
 box-shadow: rgba(0, 0, 0, 0.20) 0px 5px 15px;
 text-align: center;
 animation: open  0.2s ease-in-out;

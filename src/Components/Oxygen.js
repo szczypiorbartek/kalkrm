@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import styled from "styled-components";
 import { ButtonAreaStyled } from "../Style/ButtonAreaStyled";
 import { StyledItemWrapper } from "../Style/StyledItemWrapper";
 import { StyledButton } from "../Style/StyledButton";
@@ -11,6 +12,37 @@ import { StyledCyrcle } from "../Style/StyledCyrcle";
 import Alert from "./Alert";
 import { ColumnStyle } from "../Style/ColumnStyle";
 import { CheckStyled } from "../Style/CheckStyled";
+
+const ColumnInputArea = styled.div`
+width: 100%;
+margin: 5% auto;
+
+display: flex;
+/* background-color: black; */
+gap:40px;
+flex-direction: column;
+justify-content: space-around;
+
+
+@media (orientation: landscape){
+  padd-top:40px;
+flex-direction: row;
+height: 10vh;
+}
+`
+const RowInputArea = styled.div`
+width: 100%;
+
+display: flex;
+gap:15px;
+flex-direction: row;
+justify-content: space-around;
+
+
+@media (orientation: landscape){
+flex-direction: row;
+}
+`
 
 export default function Oxygen(props) {
   const [valueA, setValueA] = useState('');
@@ -35,6 +67,7 @@ export default function Oxygen(props) {
   });
   const changeVisibleTimer = () => {
     setVisibleTimer(true);
+   
   };
   const unVisibleTimer = () => {
     setVisibleTimer(false);
@@ -157,13 +190,13 @@ export default function Oxygen(props) {
 
       {activeButtonB ? (
         
-        <StyledRowInput>
+        <RowInputArea>
           
           <StyledInput
             xsmall
             type="number"
             value={valueD}
-            placeholder="ilość oddechów"
+            placeholder="oddechy"
             onChange={(e) => setValueD(e.target.value)}
           />
           <StyledInput
@@ -173,11 +206,11 @@ export default function Oxygen(props) {
             placeholder="objętość"
             onChange={(e) => setValueE(e.target.value)}
           />
-        </StyledRowInput>
+        </RowInputArea>
       ) : (
         ""
       )}
-<ColumnStyle>
+<ColumnInputArea>
 <StyledInput
         small
         type="number"
@@ -204,7 +237,13 @@ export default function Oxygen(props) {
         placeholder="pojemność butli"
         onChange={(e) => setValueC(e.target.value)}
       />
-</ColumnStyle>
+      { visibleTimer ? '':<>
+     { ( newValueA || newValueB) > 0 ?  <StyledCyrcle onClick={changeVisibleTimer}>Licz</StyledCyrcle> :  <StyledCyrcle unvisible>Licz</StyledCyrcle>}
+      </>
+      
+      }
+     
+</ColumnInputArea>
       
 
       {visibleTimer && newValueA >0 || visibleTimer && newValueB>0 ? (
@@ -218,11 +257,7 @@ export default function Oxygen(props) {
         ""
       )}
 
-      {visibleTimer ? (
-        <StyledCyrcle unvisible onClick={unVisibleTimer}>X</StyledCyrcle>
-      ) : (
-        <StyledCyrcle onClick={newValueA>0 ? changeVisibleTimer :openAlert}>Licz</StyledCyrcle>
-      )}
+   
     </StyledItemWrapper>
     </>
   );

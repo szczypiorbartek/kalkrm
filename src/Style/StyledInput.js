@@ -4,10 +4,8 @@ import styled,{css} from "styled-components";
 export const StyledInput = styled.input`
 
 width: 100%;
-
-
 font-size: 20px;
-padding: 3%;
+padding: 5px 40px;
 text-align: center;
 outline: none;
 border:none;
@@ -16,41 +14,30 @@ box-shadow: rgba(0, 0, 0, 0.20) 0px 5px 15px;
 color:#3E3E3E;
 background-color: #F2F2F2;
 
+
 ${props =>
     props.small &&
     css`
-    width: 70vw;
-    font-size: 20px;
-    padding: 3%;
-    @media (min-width:450px) {
-     width: 30vw;
-     font-size: 10px;
-     padding: 2%;
-     margin: 5px;
-    
+    padding: 8px 0px;
+    font-size: 16px;
+    @media (orientation:landscape) {
+        padding:0;
+        font-size: 13px;
     }
+  
     `};
     ${props =>
     props.xsmall &&
     css`
-    width: 40vw;
+    margin: 5px;
     height: 40px;
-    font-size: 20px;
-    padding: 3%;
+    font-size: 16px;
+    padding: 5px 20px;
+  
    
-    @media (min-width:450px) {
-    
-     font-size: 10px;
-     padding: 2%;
-
-    }
+  
     `};
-    @media (min-width:450px) {
-    
-    font-size: 15px;
-    padding: 2%;
 
-    }
    
 `
 

@@ -18,9 +18,12 @@ export default function Panel(props) {
         name={"Adrenalina w pompie"}
       />
       <PanelItem open={props.openOxygen} icon={oxy} name={"Ile tlenu"} />
-      <PanelItem icon={child} name={"Dawki dla dzieci"} open={props.openChildDrug} />
+      {/* <PanelItem icon={child} name={"Dawki dla dzieci"} open={props.openChildDrug} /> */}
       <PanelItem icon={fire} name={"Oparzenia"} />
-      <PanelItem icon={nose} name={"Leki donosowo"} />
+      <PanelItem 
+      open={props.openNose} 
+      icon={nose} 
+      name={"Leki donosowo"} />
       
     </StyledPanel>
   );

@@ -36,13 +36,10 @@ label p {
 ${props =>
     props.small &&
     css`
-    height: 20vw;
+ 
     margin:0px;
 
-    @media (min-width:450px) {
-    height: 5vw;
-    
-    }
+
     `};
 @media (min-width:450px) {
      width: 80%;

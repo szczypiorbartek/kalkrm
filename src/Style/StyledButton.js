@@ -2,10 +2,10 @@ import React from "react";
 import styled,{css} from "styled-components";
 
 export const StyledButton= styled.button`
-margin-top: 3vh;
+/* margin-top: 3vh; */
 font-size: 12px;
-
-height: 50px;
+min-width: 140px;
+padding: 10px 40px;
 
 box-shadow: rgba(0, 0, 0, 0.20) 0px 5px 15px;
 background-color: #E9E9E9;
@@ -13,7 +13,7 @@ border:none;
 border-radius: 15px;
 color:#3E3E3E;
 font-weight: bold;
-transition: .5s;
+
 
 ${props =>
     props.primary &&

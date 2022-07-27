@@ -10,8 +10,8 @@ align-items: center;
 justify-content: space-around;
 &:nth-last-of-type(1){
   background-color: ${(props)=>props.theme.colors.red};
-  grid-column-start: 1;
-  grid-column-end: 3;
+  /* grid-column-start: 1;
+  grid-column-end: 3; */
   
 } 
 &:nth-last-of-type(2){

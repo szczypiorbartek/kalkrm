@@ -1,6 +1,7 @@
 import React,{useState} from "react";
 import Adrenalina from "./Adrenalina";
 import Oxygen from "./Oxygen";
+import Nose from "./Nose";
 
 import { StyledModal } from "../Style/StyledModal";
 import ChildDrugs from "./ChildDrugs";
@@ -18,6 +19,9 @@ const visibleAdrenalina = useState(props.visibleAdrenalina)
        }
        {
            props.visibleChildDrug ? <ChildDrugs content={props.contentVisible}/> : ''
+       }
+        {
+           props.visibleNose ? <Nose content={props.contentVisible}/> : ''
        }
        
    </StyledModal>

@@ -4,7 +4,7 @@ import { ButtonAreaStyled } from "../Style/ButtonAreaStyled";
 import { StyledItemWrapper } from "../Style/StyledItemWrapper";
 import { StyledButton } from "../Style/StyledButton";
 import { StyledContent } from "../Style/StyledContent";
-import { StyledInput } from "../Style/StyledInput";
+// import { StyledInput } from "../Style/StyledInput";
 import { StyledSelect } from "../Style/StyledSelect";
 import { StyledCyrcle } from "../Style/StyledCyrcle";
 import {ReactComponent as Close} from '../Assets/close.svg';
@@ -59,7 +59,7 @@ const CheckArea = styled.div`
 const InputArea = styled.div`
 position: relative;
 width: 100%;
-padding: 20px 0;
+padding: 5px 0;
 display: grid;
 grid-gap: 40px;
 grid-template-columns: 1fr;
@@ -67,13 +67,27 @@ grid-template-columns: 1fr;
 
 
 @media (orientation:landscape){
+ 
   grid-template-columns: 1fr;
+  width: 100%;
 
 
 }
 p{
   text-align: center;
 }
+`
+const StyledInput = styled.input`
+padding: 15px 10px;
+font-size: 16px;
+
+text-align: center;
+outline: none;
+border:none;
+border-radius: 15px;
+box-shadow: rgba(0, 0, 0, 0.20) 0px 5px 15px;
+color:#3E3E3E;
+background-color: #F2F2F2;
 `
 
 export default function Adrenalina(props) {
@@ -100,6 +114,9 @@ export default function Adrenalina(props) {
     setContentVisible(false);
     setDoseValue('');
     setWeightValue(''); 
+    setCheckA(false)
+    setCheckB(false)
+    setBardy(0)
   };
   const changeBradyActive = () => {
     setShockActie(false) 
@@ -171,6 +188,7 @@ export default function Adrenalina(props) {
      )}
      <InputArea>
      <StyledInput
+     
        placeholder="Podaj dawkę w mcg"
        type="number"
        value={doseValue}
@@ -178,6 +196,7 @@ export default function Adrenalina(props) {
      />
      {shockActive ? (
        <StyledInput
+       
          placeholder="Podaj wagę w kg"
          type="number"
          value={weightValue}
@@ -222,7 +241,7 @@ export default function Adrenalina(props) {
 
      
 
-     {(doseValue > 0) & contentVisble & (checkB || checkA) ? (
+     {contentVisble ? (
        <div>
          {bradyActive ? (
            <StyledContent>
@@ -247,11 +266,10 @@ export default function Adrenalina(props) {
      ) : (
        ""
      )}
-     {contentVisble ? (
-       <StyledCyrcle  unvisible onClick={ getValue }> X </StyledCyrcle>
-     ) : (
-       <StyledCyrcle onClick={() =>{brady>0 || squirrel>0 ?  setContentVisible(true) : setVisibleAlert(true) }}> Licz </StyledCyrcle>
-     )}
+     {bradyActive ?
+     doseValue > 0 &&  ( checkA || checkB) ===true ?  <StyledCyrcle onClick={() => setContentVisible(true)}> Licz </StyledCyrcle> : <StyledCyrcle unvisible>Licz</StyledCyrcle> : weightValue && doseValue &&   (checkA || checkB) ===true ?  <StyledCyrcle onClick={() => setContentVisible(true)}> Licz </StyledCyrcle> : ''
+     }
+    
    </StyledItemWrapper>
  );
 

@@ -4,13 +4,11 @@ import styled from "styled-components";
 export const StyledRowInput= styled.div`
 
 width: 100%;
+height: 10%;
 display: flex;
 flex-direction: row;
-justify-content: center;
-padding-left: 5vw;
-padding-right: 5vw;
-margin-top: 50px;
-transform: translateY(-10px);
+gap: 30px;
+align-items: center;
 
 
 `

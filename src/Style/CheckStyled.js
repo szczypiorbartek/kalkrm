@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const CheckStyled = styled.div`
   width: 100vw;
   height: 5vh;
-margin: 70px 0px;
+margin: 30px 0px;
   display: flex;
   
   justify-content: center;
