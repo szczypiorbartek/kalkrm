@@ -101,8 +101,8 @@ export default function Adrenalina(props) {
   const [brady, setBardy] = useState(0);
   const [shock, setShock] = useState(0);
 
-  const [weightValue, setWeightValue] = useState('');
-  const [doseValue, setDoseValue] = useState('');
+  const [weightValue, setWeightValue] = useState(0);
+  const [doseValue, setDoseValue] = useState(0);
   const [visibleAlert, setVisibleAlert] = useState(false);
 
   const changeVisibleTimer = () => {
@@ -187,13 +187,30 @@ export default function Adrenalina(props) {
        <p> Dawka we wstrząsie: 0.05 - 0.5mcg/kg/min</p>
      )}
      <InputArea>
-     <StyledInput
-     
+     {
+      bradyActive ?
+      <input
        placeholder="Podaj dawkę w mcg"
-       type="number"
+        type="range"
+        min='2'
+        max='10'
        value={doseValue}
        onChange={(e) => setDoseValue(e.target.value)}
      />
+     :
+     <input
+     
+       placeholder="Podaj dawkę w mcg"
+        type="range"
+        min='0.05'
+        max='0.5'
+        step="0.01"
+       value={doseValue}
+       onChange={(e) => setDoseValue(e.target.value)}
+     />
+
+     }
+     
      {shockActive ? (
        <StyledInput
        
@@ -205,7 +222,7 @@ export default function Adrenalina(props) {
      ) : (
        ""
      )}
-    
+    <p>{doseValue}</p>
      <CheckArea>
       
      

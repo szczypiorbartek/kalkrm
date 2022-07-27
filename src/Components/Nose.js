@@ -94,10 +94,12 @@ const Nose = () => {
     const [weight ,setWeight] = useState(0)
     return(
        <Wrapper>
-        <h1>leki donosowo</h1>
+        <h1>LEKI DONOSOWO</h1>
             <InputWrapper>
-            <StyledInput onChange={(e)=>setWeight(e.target.value)}/>
+            {/* <StyledInput onChange={(e)=>setWeight(e.target.value)}/> */}
+            <input type="range"  min="0" max="50" onChange={(e)=>setWeight(e.target.value)}></input>
             </InputWrapper>
+            <p>Waga: {weight} kg </p>
             <DrugsWrapper>
                 {openA ? <Drug  onClick={()=>setOpenA(!openA)}> 
                  <h1>Fentanyl</h1>
