@@ -21,6 +21,7 @@ top:0;
 left: 0;
 h1{
     font-size: 1em;
+    margin: 20px;
    
     
 }

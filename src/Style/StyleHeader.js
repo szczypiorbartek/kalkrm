@@ -19,15 +19,17 @@ export const StyledHeader = styled.div`
   /* border-top-left-radius: 30px;
   border-top-right-radius: 30px; */
   padding: 10px 0px;
-  color: #FFD100;
+  color: red;
+  font-weight: bold;
+  text-transform: u;
   opacity: .9;
   animation: .2s linear slidein;
  
   
 
   svg {
-    width: 20px;
-    height: 20px;
+    width: 35px;
+    height: 35px;
   
   }
   @keyframes slidein {
@@ -50,8 +52,8 @@ export const StyledHeader = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  width:40px;
-height: 50px;
+  width:55px;
+height: 60px;
 padding: 10px 10px;
 transform: translateX(0);
 background-color:black ;
@@ -61,8 +63,8 @@ animation: none;
 justify-content:center;
 align-item:center;
  svg{
-   width: 10px;
-   height: 10px;
+   width: 25px;
+   height: 25px;
  }
  
  

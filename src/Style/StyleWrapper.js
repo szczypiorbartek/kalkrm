@@ -10,6 +10,7 @@ max-width: 1000px;
 margin: 0 auto;
 display: flex;
 flex-direction: column;
+
 background-color: ${(props)=>props.theme.colors.powderWhite};
 overflow-x: hidden;
 

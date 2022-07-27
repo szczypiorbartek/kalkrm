@@ -32,22 +32,29 @@ height: 15vh;
 
 `
 const DrugsWrapper = styled.div`
-padding: 40px 0;
+padding: 40px 0 90px;
 width: 100%;
-height: 100vh;
-display: grid;
+
+
+/* display: grid;
 grid-template-rows: 1fr 1fr 1fr;
-grid-gap: 10px;
+grid-gap: 10px; */
+display: flex;
+flex-direction: column;
+justify-content: space-around;
+gap: 15px;
 /* background-color: red; */
 `
 
 const Drug =styled.div`
 display: flex;
+
 align-items: center;
 justify-content: center;
 text-align: center;
 flex-direction: column;
-padding: 0 5px;
+padding: 10px 5px;
+transition: all .5s ease-in-out;
 
 
 
@@ -95,11 +102,13 @@ const Nose = () => {
     return(
        <Wrapper>
         <h1>LEKI DONOSOWO</h1>
+        <h1>Waga: {weight} kg </h1>
             <InputWrapper>
+           
             {/* <StyledInput onChange={(e)=>setWeight(e.target.value)}/> */}
-            <input type="range"  min="0" max="50" onChange={(e)=>setWeight(e.target.value)}></input>
+            <input type="range"  value={weight} min="0" max="50" onChange={(e)=>setWeight(e.target.value)}></input>
             </InputWrapper>
-            <p>Waga: {weight} kg </p>
+          
             <DrugsWrapper>
                 {openA ? <Drug  onClick={()=>setOpenA(!openA)}> 
                  <h1>Fentanyl</h1>
@@ -116,7 +125,7 @@ const Nose = () => {
                  </Drug>
                  : <Drug small onClick={()=>setOpenB(!openB)}>  
                     <h1>W mililitrach : {(Math.ceil((weight*2)/5)/10).toFixed(2)} ml</h1>
-                    <h1>Dawka w mcg : {(Math.ceil((weight*2)/5)/2)} mg</h1>
+                    <h1>Dawka w mg : {(Math.ceil((weight*2)/5)/2)} mg</h1>
                     </Drug>
                 }
                    {openC ? <Drug  onClick={()=>setOpenC(!openC)}> 
@@ -125,7 +134,7 @@ const Nose = () => {
                  </Drug>
                  : <Drug small onClick={()=>setOpenC(!openC)}>  
                     <h1>W mililitrach : {(Math.ceil((weight*3)/5)/10).toFixed(2)} ml</h1>
-                    <h1>Dawka w mcg : {(Math.ceil((weight*3)/5)*5)} mg</h1>
+                    <h1>Dawka w mg : {(Math.ceil((weight*3)/5)*5)} mg</h1>
                     </Drug>
                 }
             
