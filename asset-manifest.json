@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/kalkrm/static/js/main.70108808.js",
+    "main.js": "/kalkrm/static/js/main.2b6eb63d.js",
     "static/js/787.b665e186.chunk.js": "/kalkrm/static/js/787.b665e186.chunk.js",
     "static/media/Home.svg": "/kalkrm/static/media/Home.187f9f924cc150c63f4547871f2afe90.svg",
     "static/media/oxy.svg": "/kalkrm/static/media/oxy.8a7262e5ab93818ed3e3ebadd4d7ed89.svg",
@@ -13,10 +13,10 @@
     "static/media/dopamina.svg": "/kalkrm/static/media/dopamina.fbdc2f47e4127bde84db1b1cfe09e06e.svg",
     "index.html": "/kalkrm/index.html",
     "static/media/arrow.svg": "/kalkrm/static/media/arrow.e205024a6c7e0dc0f530b0f26c92a88f.svg",
-    "main.70108808.js.map": "/kalkrm/static/js/main.70108808.js.map",
+    "main.2b6eb63d.js.map": "/kalkrm/static/js/main.2b6eb63d.js.map",
     "787.b665e186.chunk.js.map": "/kalkrm/static/js/787.b665e186.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.70108808.js"
+    "static/js/main.2b6eb63d.js"
   ]
 }
