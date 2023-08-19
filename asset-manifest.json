@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.js": "/kalkrm/static/js/main.70108808.js",
+    "static/js/787.b665e186.chunk.js": "/kalkrm/static/js/787.b665e186.chunk.js",
+    "static/media/Home.svg": "/kalkrm/static/media/Home.187f9f924cc150c63f4547871f2afe90.svg",
+    "static/media/oxy.svg": "/kalkrm/static/media/oxy.8a7262e5ab93818ed3e3ebadd4d7ed89.svg",
+    "static/media/child.svg": "/kalkrm/static/media/child.5cd1a07e5049c303c4e5211a1675b411.svg",
+    "static/media/nose.svg": "/kalkrm/static/media/nose.124f9ba35f39b9f619066c6ca034df20.svg",
+    "static/media/fire.svg": "/kalkrm/static/media/fire.e10ca8ee57656c0ee194a78edfebd7fa.svg",
+    "static/media/menu.svg": "/kalkrm/static/media/menu.d7a069dd4546642bcc3467da460a3766.svg",
+    "static/media/close.svg": "/kalkrm/static/media/close.aab40a95994658c9a1b8ae3ac6e1cf63.svg",
+    "static/media/adrenalina.svg": "/kalkrm/static/media/adrenalina.e4e44e2522545769f70ff4d73ee1dd7e.svg",
+    "static/media/dopamina.svg": "/kalkrm/static/media/dopamina.fbdc2f47e4127bde84db1b1cfe09e06e.svg",
+    "index.html": "/kalkrm/index.html",
+    "static/media/arrow.svg": "/kalkrm/static/media/arrow.e205024a6c7e0dc0f530b0f26c92a88f.svg",
+    "main.70108808.js.map": "/kalkrm/static/js/main.70108808.js.map",
+    "787.b665e186.chunk.js.map": "/kalkrm/static/js/787.b665e186.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.70108808.js"
+  ]
+}
