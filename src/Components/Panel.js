@@ -18,8 +18,8 @@ export default function Panel(props) {
         name={"Adrenalina w pompie"}
       />
       <PanelItem open={props.openOxygen} icon={oxy} name={"Ile tlenu"} />
-      {/* <PanelItem icon={child} name={"Dawki dla dzieci"} open={props.openChildDrug} /> */}
-      <PanelItem icon={fire} name={"Oparzenia"} />
+       <PanelItem icon={child} name={"Dawki dla dzieci"} open={props.openChildDrug} />
+      {/* <PanelItem icon={fire} name={"Oparzenia"} /> */}
       <PanelItem 
       open={props.openNose} 
       icon={nose} 
